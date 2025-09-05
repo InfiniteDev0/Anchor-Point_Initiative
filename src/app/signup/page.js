@@ -90,7 +90,10 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen flex flex-col gap-[3rem] items-center justify-center bg-[#e8e8e8]">
-      <Link href={"/"} className="flex flex-col items-center justify-center text-center gap-3">
+      <Link
+        href={"/"}
+        className="flex flex-col items-center justify-center text-center gap-3"
+      >
         <Brain className="w-8 h-8 text-cyan-500" />
         <p className="leading-5 font-semibold text-black">
           ANCHOR POINT <br /> INITIATIVE
@@ -137,10 +140,10 @@ export default function SignupPage() {
               <FcGoogle className="w-5 h-5" /> Continue with Google
             </button>
             <p className="text-xs text-gray-500">
-              By clicking "Create account" above, you acknowledge that you will
-              receive updates from the Relume team and that you have read,
-              understood, and agreed to Relume Library's Terms & Conditions,
-              Licensing Agreement and Privacy Policy.
+              By clicking &quot;Create account&quot; above, you acknowledge that
+              you will receive updates from the Relume team and that you have
+              read, understood, and agreed to Relume Library&apos;s Terms &amp;
+              Conditions, Licensing Agreement and Privacy Policy.
             </p>
             <div className="flex items-center justify-between mt-6">
               <span className="">Already have an account?</span>

@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import ClientNav from "./components/ClientNav";
 import { supabase } from "@/lib/supabaseClient";
 
-const page = () => {
+function DashboardPage() {
   const searchParams = useSearchParams();
   const [profile, setProfile] = useState(null);
 
@@ -35,6 +35,6 @@ const page = () => {
       {/* dashboard content here */}
     </div>
   );
-};
+}
 
-export default page;
+export default DashboardPage;

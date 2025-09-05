@@ -126,11 +126,14 @@ const LoginPage = () => {
 
   return (
     <div className="flex flex-col !p-[3%] gap-[3rem] items-center bg-[#e8e8e8] min-h-screen animate-fadein">
-      <Link href={"/"} className="flex flex-col items-center justify-center text-center gap-3">
-          <Brain className="w-8 h-8 text-cyan-500" />
-          <p className="leading-5 font-semibold text-black">
-            ANCHOR POINT <br /> INITIATIVE
-          </p>
+      <Link
+        href={"/"}
+        className="flex flex-col items-center justify-center text-center gap-3"
+      >
+        <Brain className="w-8 h-8 text-cyan-500" />
+        <p className="leading-5 font-semibold text-black">
+          ANCHOR POINT <br /> INITIATIVE
+        </p>
       </Link>
       <form
         onSubmit={handleEmailSignIn}
@@ -208,7 +211,7 @@ const LoginPage = () => {
           <FcGoogle className="w-5 h-5" /> Continue with Google
         </button>
         <div className="flex items-center justify-between mt-6">
-          <span>Don't have an account?</span>
+          <span>Don&apos;t have an account?</span>
           <Link
             href="/signup"
             className="ml-2 px-4 py-2 border rounded-lg text-black hover:bg-gray-100 text-sm"
