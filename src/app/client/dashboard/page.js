@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import ClientNav from "./components/ClientNav";
@@ -30,10 +30,12 @@ function DashboardPage() {
     }
   }, [searchParams]);
   return (
-    <div className="!px-[3%] bg-[#ebebeb] min-h-screen !py-[1%] ">
-      <ClientNav />
-      {/* dashboard content here */}
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="!px-[3%] bg-[#ebebeb] min-h-screen !py-[1%] ">
+        <ClientNav />
+        {/* dashboard content here */}
+      </div>
+    </Suspense>
   );
 }
 
