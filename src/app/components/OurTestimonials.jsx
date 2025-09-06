@@ -66,7 +66,7 @@ const OurTestimonials = () => {
         variants={itemVariants}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex justify-center gap-2 mb-2">
+        <div className="flex justify-center gap-1 mb-2">
           {testimonials.map((t, idx) => (
             <Avatar key={idx} className="w-8 h-8">
               <AvatarImage src={t.image.src} alt={t.name} />
@@ -74,13 +74,13 @@ const OurTestimonials = () => {
             </Avatar>
           ))}
         </div>
-        <p className="text-xs text-gray-500 mb-2">
+        <p className="text-xs text-gray-500 !mb-2">
           700+ Youth & Families trust API
         </p>
-        <h2 className=" text-2xl md:text-3xl font-bold mb-2">
+        <h2 className=" text-2xl md:text-3xl font-bold !mb-2">
           Helping youth thrive with community support
         </h2>
-        <div className="flex  flex-col md:flex-row justify-center gap-3 mt-4">
+        <div className="flex  flex-col md:flex-row justify-center gap-3 !mt-6">
           <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
             Join our community
           </button>
@@ -96,8 +96,8 @@ const OurTestimonials = () => {
             variants={itemVariants}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="bg-white rounded-xl p-6">
-              <p className="text-gray-800 mb-4">{t.text}</p>
+            <div className="bg-white rounded-xl min-h-[30vh] p-6">
+              <p className="text-gray-800 text-sm mb-4">{t.text}</p>
               <div className="flex items-center gap-3 mt-6">
                 <Avatar className="w-10 h-10">
                   <AvatarImage src={t.image.src} alt={t.name} />

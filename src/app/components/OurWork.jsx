@@ -15,7 +15,7 @@ const OurWork = () => {
   const y = useTransform(scrollY, [start, end], ["8rem", "0rem"]);
 
   return (
-    <div className="!px-[5%] !py-[5rem] flex flex-col gap-[3rem] md:gap-[10rem] items-center ">
+    <div className="!px-[1.5rem] md:!px-[5%] !py-[5rem] flex flex-col gap-[3rem] md:gap-[10rem] items-center ">
       <h1 className="text-5xl md:text-9xl font-extrabold tracking-tighter text-gray-300">
         HOW WE{" "}
         <motion.span

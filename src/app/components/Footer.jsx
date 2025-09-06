@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#e8edf7] pt-16 pb-6 px- md:px-12 lg:px-24 w-full text-gray-900">
+    <footer className="bg-[#e8edf7] pt-16 pb-6 px-6 md:px-12 lg:px-24 w-full text-gray-900">
       <div className="max-w-7xl mx-auto">
         {/* Appointment CTA */}
         <div className="flex flex-col items-center text-center mb-12">
@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
           <a
             href="#"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-8 py-3 rounded-full shadow transition inline-block"
+            className="bg-cyan-600 active:bg-cyan-500 md:hover:bg-indigo-700 transition-all duration-500 text-white font-medium px-8 py-3 rounded-full shadow  inline-block"
           >
             Book An Appointment
           </a>

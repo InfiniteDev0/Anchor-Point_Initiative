@@ -59,7 +59,7 @@ const OurSolutions = () => {
             variants={itemVariants}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Card className="bg-white/40 backdrop-blur-xl hover:bg-white transition-all duration-500 border-none cursor-pointer">
+            <Card className="md:bg-white/40 backdrop-blur-xl hover:bg-white transition-all duration-500 border-none cursor-pointer">
               <CardHeader className="flex flex-col  text-left gap-2">
                 <solution.icon
                   size={55}

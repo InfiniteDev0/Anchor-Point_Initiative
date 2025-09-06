@@ -15,15 +15,21 @@ const textVariants = {
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  md:!py-[1%] min-h-[80vh]">
+    <div className="grid grid-cols-1 md:grid-cols-2 !py-[10%]  md:!py-[1%] min-h-[80vh]">
       <div
+        className="flex flex-col gap-10 items-center w-full  md:!px-[5%] !py-[3rem] justify-center bg-cover bg-center"
         style={{
           backgroundImage: `url(${hero1.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
-        className="flex flex-col gap-10 items-center w-full  md:!px-[5%] !py-[3rem] justify-center "
       >
+        <style jsx>{`
+          @media (max-width: 768px) {
+            .bg-cover.bg-center {
+              background-image: url(${require("@/assets/images").hero4
+                .src}) !important;
+            }
+          }
+        `}</style>
         <div className="w-[90%] flex flex-col !p-5 gap-3">
           <motion.p
             className="text-orange-500"
@@ -35,7 +41,7 @@ const Hero = () => {
             FEEL STRONGER
           </motion.p>
           <motion.h1
-            className="text-4xl text-gray-200 font-extrabold one"
+            className="text-4xl md:text-gray-200 font-extrabold one"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -44,7 +50,7 @@ const Hero = () => {
             BUILDING OUR COMMUNITY BY HELPING THE YOUTH
           </motion.h1>
           <motion.p
-            className="text-gray-300 text-sm"
+            className="text-gray-700 md:text-gray-300 text-sm"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -64,7 +70,7 @@ const Hero = () => {
         >
           <Button
             className={
-              "bg-cyan-500 w-full md:w-fit !px-[2rem] text-md rounded-full transition-all duration-500 cursor-pointer !py-[1.5rem]  "
+              "bg-cyan-500 active:bg-cyan-400 hover:bg-cyan-500 md:hover:bg-cyan-400 w-full md:w-fit !px-[2rem] text-md rounded-full transition-all duration-500 cursor-pointer !py-[1.5rem]  "
             }
           >
             {" "}
@@ -72,7 +78,7 @@ const Hero = () => {
           </Button>
           <Button
             className={
-              "bg-white text-black w-full md:w-fit !px-[2rem] text-md rounded-full hover:bg-cyan-500 transition-all duration-500 cursor-pointer !py-[1.5rem]  "
+              "bg-white text-black w-full md:w-fit !px-[2rem] text-md rounded-full active:bg-cyan-400 hover:bg-white md:hover:bg-cyan-500 transition-all duration-500 cursor-pointer !py-[1.5rem]  "
             }
           >
             Upcoming Events

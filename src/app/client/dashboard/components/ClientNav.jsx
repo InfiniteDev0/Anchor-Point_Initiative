@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { auth } from "@/app/login/firebase";
+import { auth } from "@/app/auth/firebase";
 import Link from "next/link";
 
 const ClientNav = () => {
@@ -31,7 +31,7 @@ const ClientNav = () => {
       await auth.signOut();
       localStorage.removeItem("user");
       toast.success("Logged out successfully!");
-      router.replace("/login");
+      router.replace("/auth");
     } catch (err) {
       toast.error("Logout failed: " + err.message);
     }

@@ -26,7 +26,7 @@ const itemVariants = {
 const Team = () => {
   return (
     <motion.div
-      className="max-w-6xl mx-auto py-16 px-4"
+      className="max-w-6xl mx-auto py-20 px-5 md:py-16 md:px-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -64,7 +64,7 @@ const Team = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className={`overflow-hidden shadow-none p-0`}>
-              <div className="w-full h-45  flex items-center justify-center">
+              <div className="w-full  flex items-center justify-center">
                 <Image
                   src={member.image}
                   alt={member.name}

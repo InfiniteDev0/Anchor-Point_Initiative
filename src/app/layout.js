@@ -33,15 +33,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${outfit.variable} ${poppins.variable} bg-[#ebebeb] antialiased`}
       >
-        <Toaster />
+        <Toaster richColors position="top-right" />
         <AppProvider>
           {!(
-            pathname === "/login" ||
-            pathname === "/signup" ||
-            pathname.startsWith("/client/dashboard")
+            pathname === "/auth" || pathname.startsWith("/client/dashboard")
           ) && <Navbar />}
           {children}
-          <Footer />
+          {!(
+            pathname === "/auth" || pathname.startsWith("/client/dashboard")
+          ) && <Footer />}
         </AppProvider>
       </body>
     </html>

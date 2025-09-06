@@ -41,7 +41,7 @@ const OurBlog = () => {
         <Button variant="outline" size="sm" asChild>
           <Link href="/blog">View all blogs</Link>
         </Button>
-        <Button  size="sm" onClick={handleRefresh}>
+        <Button size="sm" onClick={handleRefresh}>
           Refresh
         </Button>
       </div>
@@ -52,7 +52,7 @@ const OurBlog = () => {
       <div className="relative">
         {/* Carousel */}
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {[...Array(CARDS_PER_PAGE)].map((_, idx) => (
               <Card key={idx} className="p-0 border-none bg-transparent">
                 <Skeleton className="w-full h-64 rounded-2xl mb-4" />
@@ -67,7 +67,7 @@ const OurBlog = () => {
             ))}
           </div>
         ) : (
-          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {paginatedArticles.map((article, idx) => (
               <Card
                 key={article.article_id || idx}
@@ -77,7 +77,6 @@ const OurBlog = () => {
                   <img
                     src={article.image_url || "/default.jpg"}
                     alt={article.title}
-                    fill
                     className="object-cover w-full h-full rounded-lg"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />

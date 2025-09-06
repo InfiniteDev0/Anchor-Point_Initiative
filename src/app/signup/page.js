@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useContext } from "react";
 import { Toaster, toast } from "sonner";
-import { auth } from "../login/firebase";
+import { auth } from "../auth/firebase";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,

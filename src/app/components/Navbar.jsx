@@ -100,13 +100,13 @@ const Navbar = () => {
                 className={
                   "bg-transparent hover:bg-gray-200 transition-all duration-200 cursor-pointer text-black"
                 }
-                onClick={() => router.push("/login")}
+                onClick={() => router.push("/auth")}
               >
                 Login
               </Button>
               <Button
                 className={"!px-6 !py-1 cursor-pointer"}
-                onClick={() => router.push("/signup")}
+                onClick={() => router.push("/auth")}
               >
                 Start for free
               </Button>
@@ -146,10 +146,10 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-text-align-end-icon lucide-text-align-end"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-text-align-end-icon lucide-text-align-end"
               >
                 <path d="M21 5H3" />
                 <path d="M21 12H9" />
@@ -198,7 +198,7 @@ const Navbar = () => {
                       <details className="group">
                         <summary className="flex items-center justify-between cursor-pointer py-2 px-2 rounded-lg hover:bg-gray-100 text-gray-700 font-medium">
                           <span>{dropdown.label}</span>
-                          <ChevronDown className="w-4 h-4"/>
+                          <ChevronDown className="w-4 h-4" />
                         </summary>
                         <ul className="pl-4 mt-2 space-y-2">
                           {dropdown.items.map((item) => (
@@ -238,7 +238,7 @@ const Navbar = () => {
                         className="bg-black text-white hover:bg-indigo-700 w-[150px]"
                         onClick={() => {
                           setMenuOpen(false);
-                          router.push("/login");
+                          router.push("/auth");
                         }}
                       >
                         Login
@@ -247,7 +247,7 @@ const Navbar = () => {
                         className="bg-gray-200 text-gray-700 hover:bg-gray-200 w-[150px]"
                         onClick={() => {
                           setMenuOpen(false);
-                          router.push("/signup");
+                          router.push("/auth");
                         }}
                       >
                         Start for free
