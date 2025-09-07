@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Brain, Eye, EyeOff } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "sonner";
@@ -58,6 +58,14 @@ export default function Auth() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const urlMode = params.get("mode");
+      if (urlMode === "signup") setMode("signup");
+    }
+  }, []);
 
   // Auth handlers
   const handleLogin = async (e) => {
@@ -120,13 +128,8 @@ export default function Auth() {
   };
 
   // UI
-  const textVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
-    },
+  const handleGoHome = () => {
+    window.location.href = "/";
   };
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#f8f8f8]">
@@ -141,7 +144,13 @@ export default function Auth() {
         />
         <div className="relative z-10 flex flex-col items-start justify-between h-full px-12 py-10 ">
           <div className="flex items-center gap-3">
-            <Brain className="w-8 h-8 text-cyan-500" />
+            <Brain
+              className="w-8 h-8 text-cyan-500 cursor-pointer"
+              onClick={handleGoHome}
+              tabIndex={0}
+              role="button"
+              title="Go to Home"
+            />
             <p className="leading-5 font-semibold text-black">
               ANCHOR POINT <br /> INITIATIVE
             </p>
@@ -203,7 +212,7 @@ export default function Auth() {
         </div>
       </div>
       {/* Right form card */}
-      <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-8">
+      <div className="flex flex-col items-center justify-center w-full md:w-1/2  md:p-8">
         <AnimatePresence mode="wait">
           {mode === "login" ? (
             <motion.div
@@ -215,7 +224,13 @@ export default function Auth() {
               className="w-full max-w-md p-8"
             >
               <div className="flex flex-col items-center mb-6">
-                <Brain className="w-8 h-8 text-cyan-500 mb-2" />
+                <Brain
+                  className="w-8 h-8 text-cyan-500 mb-2 cursor-pointer"
+                  onClick={handleGoHome}
+                  tabIndex={0}
+                  role="button"
+                  title="Go to Home"
+                />
                 <h2 className="text-xl font-semibold text-gray-800 mb-1">
                   Welcome back!
                 </h2>
@@ -314,7 +329,13 @@ export default function Auth() {
               className="w-full max-w-md p-8"
             >
               <div className="flex flex-col items-center mb-6">
-                <Brain className="w-8 h-8 text-cyan-500 mb-2" />
+                <Brain
+                  className="w-8 h-8 text-cyan-500 mb-2 cursor-pointer"
+                  onClick={handleGoHome}
+                  tabIndex={0}
+                  role="button"
+                  title="Go to Home"
+                />
                 <h2 className="text-xl font-semibold text-gray-800 mb-1">
                   Create your account
                 </h2>

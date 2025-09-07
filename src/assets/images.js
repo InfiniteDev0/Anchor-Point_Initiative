@@ -17,6 +17,9 @@ import headspace from "../../public/headspace.png";
 import mente from "../../public/mente.png";
 import timelycare from "../../public/timelycare.png";
 
+import soln from '../../public/solution.png'
+import survey from '../../public/survey.png'
+
 export {
     logo,
     profile,
@@ -34,5 +37,7 @@ export {
     mind,
     headspace,
     mente,
-    timelycare
+    timelycare,
+    soln, 
+    survey
 }

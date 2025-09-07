@@ -106,7 +106,7 @@ const Navbar = () => {
               </Button>
               <Button
                 className={"!px-6 !py-1 cursor-pointer"}
-                onClick={() => router.push("/auth")}
+                onClick={() => router.push("/auth?mode=signup")}
               >
                 Start for free
               </Button>
@@ -247,7 +247,7 @@ const Navbar = () => {
                         className="bg-gray-200 text-gray-700 hover:bg-gray-200 w-[150px]"
                         onClick={() => {
                           setMenuOpen(false);
-                          router.push("/auth");
+                          router.push("/auth?mode=signup");
                         }}
                       >
                         Start for free
