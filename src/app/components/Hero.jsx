@@ -70,7 +70,7 @@ const Hero = () => {
         >
           <Button
             className={
-              "bg-cyan-500 active:bg-cyan-400 hover:bg-cyan-500 md:hover:bg-cyan-400 w-full md:w-fit !px-[2rem] text-md rounded-full transition-all duration-500 cursor-pointer !py-[1.5rem]  "
+              "bg-cyan-500 active:bg-cyan-400 hover:bg-cyan-500 md:hover:bg-cyan-400 w-full md:w-fit !px-[2rem] text-sm rounded-full transition-all duration-500 cursor-pointer !py-[1.5rem]  "
             }
           >
             {" "}
@@ -78,7 +78,7 @@ const Hero = () => {
           </Button>
           <Button
             className={
-              "bg-white text-black w-full md:w-fit !px-[2rem] text-md rounded-full active:bg-cyan-400 hover:bg-white md:hover:bg-cyan-500 transition-all duration-500 cursor-pointer !py-[1.5rem]  "
+              "bg-white text-black w-full md:w-fit !px-[2rem] text-sm rounded-full active:bg-cyan-400 hover:bg-white md:hover:bg-cyan-500 transition-all duration-500 cursor-pointer !py-[1.5rem]  "
             }
           >
             Upcoming Events

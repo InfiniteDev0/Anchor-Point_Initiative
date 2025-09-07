@@ -29,110 +29,111 @@ import {
 export const description = "An interactive area chart";
 
 const chartData = [
-  { date: "2024-04-01", desktop: 222, mobile: 150 },
-  { date: "2024-04-02", desktop: 97, mobile: 180 },
-  { date: "2024-04-03", desktop: 167, mobile: 120 },
-  { date: "2024-04-04", desktop: 242, mobile: 260 },
-  { date: "2024-04-05", desktop: 373, mobile: 290 },
-  { date: "2024-04-06", desktop: 301, mobile: 340 },
-  { date: "2024-04-07", desktop: 245, mobile: 180 },
-  { date: "2024-04-08", desktop: 409, mobile: 320 },
-  { date: "2024-04-09", desktop: 59, mobile: 110 },
-  { date: "2024-04-10", desktop: 261, mobile: 190 },
-  { date: "2024-04-11", desktop: 327, mobile: 350 },
-  { date: "2024-04-12", desktop: 292, mobile: 210 },
-  { date: "2024-04-13", desktop: 342, mobile: 380 },
-  { date: "2024-04-14", desktop: 137, mobile: 220 },
-  { date: "2024-04-15", desktop: 120, mobile: 170 },
-  { date: "2024-04-16", desktop: 138, mobile: 190 },
-  { date: "2024-04-17", desktop: 446, mobile: 360 },
-  { date: "2024-04-18", desktop: 364, mobile: 410 },
-  { date: "2024-04-19", desktop: 243, mobile: 180 },
-  { date: "2024-04-20", desktop: 89, mobile: 150 },
-  { date: "2024-04-21", desktop: 137, mobile: 200 },
-  { date: "2024-04-22", desktop: 224, mobile: 170 },
-  { date: "2024-04-23", desktop: 138, mobile: 230 },
-  { date: "2024-04-24", desktop: 387, mobile: 290 },
-  { date: "2024-04-25", desktop: 215, mobile: 250 },
-  { date: "2024-04-26", desktop: 75, mobile: 130 },
-  { date: "2024-04-27", desktop: 383, mobile: 420 },
-  { date: "2024-04-28", desktop: 122, mobile: 180 },
-  { date: "2024-04-29", desktop: 315, mobile: 240 },
-  { date: "2024-04-30", desktop: 454, mobile: 380 },
-  { date: "2024-05-01", desktop: 165, mobile: 220 },
-  { date: "2024-05-02", desktop: 293, mobile: 310 },
-  { date: "2024-05-03", desktop: 247, mobile: 190 },
-  { date: "2024-05-04", desktop: 385, mobile: 420 },
-  { date: "2024-05-05", desktop: 481, mobile: 390 },
-  { date: "2024-05-06", desktop: 498, mobile: 520 },
-  { date: "2024-05-07", desktop: 388, mobile: 300 },
-  { date: "2024-05-08", desktop: 149, mobile: 210 },
-  { date: "2024-05-09", desktop: 227, mobile: 180 },
-  { date: "2024-05-10", desktop: 293, mobile: 330 },
-  { date: "2024-05-11", desktop: 335, mobile: 270 },
-  { date: "2024-05-12", desktop: 197, mobile: 240 },
-  { date: "2024-05-13", desktop: 197, mobile: 160 },
-  { date: "2024-05-14", desktop: 448, mobile: 490 },
-  { date: "2024-05-15", desktop: 473, mobile: 380 },
-  { date: "2024-05-16", desktop: 338, mobile: 400 },
-  { date: "2024-05-17", desktop: 499, mobile: 420 },
-  { date: "2024-05-18", desktop: 315, mobile: 350 },
-  { date: "2024-05-19", desktop: 235, mobile: 180 },
-  { date: "2024-05-20", desktop: 177, mobile: 230 },
-  { date: "2024-05-21", desktop: 82, mobile: 140 },
-  { date: "2024-05-22", desktop: 81, mobile: 120 },
-  { date: "2024-05-23", desktop: 252, mobile: 290 },
-  { date: "2024-05-24", desktop: 294, mobile: 220 },
-  { date: "2024-05-25", desktop: 201, mobile: 250 },
-  { date: "2024-05-26", desktop: 213, mobile: 170 },
-  { date: "2024-05-27", desktop: 420, mobile: 460 },
-  { date: "2024-05-28", desktop: 233, mobile: 190 },
-  { date: "2024-05-29", desktop: 78, mobile: 130 },
-  { date: "2024-05-30", desktop: 340, mobile: 280 },
-  { date: "2024-05-31", desktop: 178, mobile: 230 },
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
+  { date: "2024-04-01", wellBeing: 60, attendance: 80, engagement: 65 },
+  { date: "2024-04-02", wellBeing: 72, attendance: 85, engagement: 70 },
+  { date: "2024-04-03", wellBeing: 55, attendance: 78, engagement: 60 },
+  { date: "2024-04-04", wellBeing: 80, attendance: 90, engagement: 75 },
+  { date: "2024-04-05", wellBeing: 66, attendance: 70, engagement: 82 },
+  { date: "2024-04-06", wellBeing: 90, attendance: 95, engagement: 88 },
+  { date: "2024-04-07", wellBeing: 68, attendance: 87, engagement: 74 },
+  { date: "2024-04-08", wellBeing: 77, attendance: 60, engagement: 85 },
+  { date: "2024-04-09", wellBeing: 70, attendance: 89, engagement: 76 },
+  { date: "2024-04-10", wellBeing: 61, attendance: 92, engagement: 67 },
+  { date: "2024-04-11", wellBeing: 82, attendance: 75, engagement: 78 },
+  { date: "2024-04-12", wellBeing: 73, attendance: 92, engagement: 79 },
+  { date: "2024-04-13", wellBeing: 60, attendance: 93, engagement: 80 },
+  { date: "2024-04-14", wellBeing: 75, attendance: 94, engagement: 81 },
+  { date: "2024-04-15", wellBeing: 66, attendance: 95, engagement: 82 },
+  { date: "2024-04-16", wellBeing: 77, attendance: 96, engagement: 83 },
+  { date: "2024-04-17", wellBeing: 88, attendance: 97, engagement: 84 },
+  { date: "2024-04-18", wellBeing: 79, attendance: 98, engagement: 85 },
+  { date: "2024-04-19", wellBeing: 80, attendance: 99, engagement: 86 },
+  { date: "2024-04-20", wellBeing: 81, attendance: 100, engagement: 87 },
+  { date: "2024-04-21", wellBeing: 62, attendance: 99, engagement: 88 },
+  { date: "2024-04-22", wellBeing: 83, attendance: 98, engagement: 89 },
+  { date: "2024-04-23", wellBeing: 74, attendance: 97, engagement: 90 },
+  { date: "2024-04-24", wellBeing: 85, attendance: 96, engagement: 91 },
+  { date: "2024-04-25", wellBeing: 66, attendance: 95, engagement: 92 },
+  { date: "2024-04-26", wellBeing: 87, attendance: 94, engagement: 93 },
+  { date: "2024-04-27", wellBeing: 78, attendance: 93, engagement: 94 },
+  { date: "2024-04-28", wellBeing: 89, attendance: 92, engagement: 95 },
+  { date: "2024-04-29", wellBeing: 70, attendance: 91, engagement: 96 },
+  { date: "2024-04-30", wellBeing: 91, attendance: 90, engagement: 97 },
+  { date: "2024-05-01", wellBeing: 82, attendance: 89, engagement: 98 },
+  { date: "2024-05-02", wellBeing: 93, attendance: 88, engagement: 99 },
+  { date: "2024-05-03", wellBeing: 74, attendance: 87, engagement: 100 },
+  { date: "2024-05-04", wellBeing: 85, attendance: 86, engagement: 99 },
+  { date: "2024-05-05", wellBeing: 96, attendance: 85, engagement: 98 },
+  { date: "2024-05-06", wellBeing: 77, attendance: 84, engagement: 97 },
+  { date: "2024-05-07", wellBeing: 98, attendance: 83, engagement: 96 },
+  { date: "2024-05-08", wellBeing: 79, attendance: 82, engagement: 95 },
+  { date: "2024-05-09", wellBeing: 90, attendance: 81, engagement: 94 },
+  { date: "2024-05-10", wellBeing: 61, attendance: 80, engagement: 93 },
+  { date: "2024-05-11", wellBeing: 92, attendance: 79, engagement: 92 },
+  { date: "2024-05-12", wellBeing: 73, attendance: 78, engagement: 91 },
+  { date: "2024-05-13", wellBeing: 84, attendance: 77, engagement: 90 },
+  { date: "2024-05-14", wellBeing: 95, attendance: 76, engagement: 89 },
+  { date: "2024-05-15", wellBeing: 66, attendance: 75, engagement: 88 },
+  { date: "2024-05-16", wellBeing: 87, attendance: 74, engagement: 87 },
+  { date: "2024-05-17", wellBeing: 78, attendance: 73, engagement: 86 },
+  { date: "2024-05-18", wellBeing: 89, attendance: 72, engagement: 85 },
+  { date: "2024-05-19", wellBeing: 70, attendance: 71, engagement: 84 },
+  { date: "2024-05-20", wellBeing: 81, attendance: 70, engagement: 83 },
+  { date: "2024-05-21", wellBeing: 92, attendance: 69, engagement: 82 },
+  { date: "2024-05-22", wellBeing: 73, attendance: 68, engagement: 81 },
+  { date: "2024-05-23", wellBeing: 84, attendance: 67, engagement: 80 },
+  { date: "2024-05-24", wellBeing: 95, attendance: 66, engagement: 79 },
+  { date: "2024-05-25", wellBeing: 76, attendance: 65, engagement: 78 },
+  { date: "2024-05-26", wellBeing: 87, attendance: 64, engagement: 77 },
+  { date: "2024-05-27", wellBeing: 78, attendance: 63, engagement: 76 },
+  { date: "2024-05-28", wellBeing: 89, attendance: 62, engagement: 75 },
+  { date: "2024-05-29", wellBeing: 70, attendance: 61, engagement: 74 },
+  { date: "2024-05-30", wellBeing: 81, attendance: 60, engagement: 73 },
+  { date: "2024-05-31", wellBeing: 92, attendance: 59, engagement: 72 },
+  { date: "2024-06-01", wellBeing: 73, attendance: 58, engagement: 71 },
+  { date: "2024-06-02", wellBeing: 84, attendance: 57, engagement: 70 },
+  { date: "2024-06-03", wellBeing: 95, attendance: 56, engagement: 69 },
+  { date: "2024-06-04", wellBeing: 76, attendance: 55, engagement: 68 },
+  { date: "2024-06-05", wellBeing: 87, attendance: 54, engagement: 67 },
+  { date: "2024-06-06", wellBeing: 78, attendance: 53, engagement: 66 },
+  { date: "2024-06-07", wellBeing: 89, attendance: 52, engagement: 65 },
+  { date: "2024-06-08", wellBeing: 70, attendance: 51, engagement: 64 },
+  { date: "2024-06-09", wellBeing: 81, attendance: 50, engagement: 63 },
+  { date: "2024-06-10", wellBeing: 92, attendance: 49, engagement: 62 },
+  { date: "2024-06-11", wellBeing: 73, attendance: 48, engagement: 61 },
+  { date: "2024-06-12", wellBeing: 84, attendance: 47, engagement: 60 },
+  { date: "2024-06-13", wellBeing: 95, attendance: 46, engagement: 59 },
+  { date: "2024-06-14", wellBeing: 76, attendance: 45, engagement: 58 },
+  { date: "2024-06-15", wellBeing: 87, attendance: 44, engagement: 57 },
+  { date: "2024-06-16", wellBeing: 78, attendance: 43, engagement: 56 },
+  { date: "2024-06-17", wellBeing: 89, attendance: 42, engagement: 55 },
+  { date: "2024-06-18", wellBeing: 70, attendance: 41, engagement: 54 },
+  { date: "2024-06-19", wellBeing: 81, attendance: 40, engagement: 53 },
+  { date: "2024-06-20", wellBeing: 92, attendance: 39, engagement: 52 },
+  { date: "2024-06-21", wellBeing: 73, attendance: 38, engagement: 51 },
+  { date: "2024-06-22", wellBeing: 84, attendance: 37, engagement: 50 },
+  { date: "2024-06-23", wellBeing: 95, attendance: 36, engagement: 49 },
+  { date: "2024-06-24", wellBeing: 76, attendance: 35, engagement: 48 },
+  { date: "2024-06-25", wellBeing: 87, attendance: 34, engagement: 47 },
+  { date: "2024-06-26", wellBeing: 78, attendance: 33, engagement: 46 },
+  { date: "2024-06-27", wellBeing: 89, attendance: 32, engagement: 45 },
+  { date: "2024-06-28", wellBeing: 70, attendance: 31, engagement: 44 },
+  { date: "2024-06-29", wellBeing: 81, attendance: 30, engagement: 43 },
+  { date: "2024-06-30", wellBeing: 92, attendance: 29, engagement: 42 },
 ];
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  wellBeing: {
+    label: "Well-being",
+    color: "#06b6d4", // cyan
   },
-  desktop: {
-    label: "Desktop",
-    color: "var(--chart-1)",
+  attendance: {
+    label: "Attendance",
+    color: "#22c55e", // green
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
+  engagement: {
+    label: "Engagement",
+    color: "#f59e42", // orange
   },
 };
 
@@ -189,29 +190,17 @@ export function ChartAreaInteractive() {
         >
           <AreaChart data={filteredData}>
             <defs>
-              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor="var(--color-desktop)"
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor="var(--color-desktop)"
-                  stopOpacity={0.1}
-                />
+              <linearGradient id="fillWellBeing" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#06b6d4" stopOpacity={0.1} />
               </linearGradient>
-              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor="var(--color-mobile)"
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor="var(--color-mobile)"
-                  stopOpacity={0.1}
-                />
+              <linearGradient id="fillAttendance" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#22c55e" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#22c55e" stopOpacity={0.1} />
+              </linearGradient>
+              <linearGradient id="fillEngagement" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#f59e42" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#f59e42" stopOpacity={0.1} />
               </linearGradient>
             </defs>
             <CartesianGrid vertical={false} />
@@ -244,17 +233,24 @@ export function ChartAreaInteractive() {
               }
             />
             <Area
-              dataKey="mobile"
+              dataKey="wellBeing"
               type="natural"
-              fill="url(#fillMobile)"
-              stroke="var(--color-mobile)"
+              fill="url(#fillWellBeing)"
+              stroke="#06b6d4"
               stackId="a"
             />
             <Area
-              dataKey="desktop"
+              dataKey="attendance"
               type="natural"
-              fill="url(#fillDesktop)"
-              stroke="var(--color-desktop)"
+              fill="url(#fillAttendance)"
+              stroke="#22c55e"
+              stackId="a"
+            />
+            <Area
+              dataKey="engagement"
+              type="natural"
+              fill="url(#fillEngagement)"
+              stroke="#f59e42"
               stackId="a"
             />
             <ChartLegend content={<ChartLegendContent />} />

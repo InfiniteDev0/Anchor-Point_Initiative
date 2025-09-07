@@ -26,7 +26,7 @@ const itemVariants = {
 const Team = () => {
   return (
     <motion.div
-      className="max-w-6xl mx-auto py-20 px-5 md:py-16 md:px-4"
+      className="max-w-6xl mx-auto py-20 px-6 md:py-16 md:px-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -47,14 +47,12 @@ const Team = () => {
         Meet the team
       </motion.h2>
       <motion.p
-        className="text-center text-gray-400 mb-10"
+        className="text-center text-sm text-gray-400 mb-10"
         variants={itemVariants}
         viewport={{ once: true, amount: 0.3 }}
       >
-        We choose our team for their compassion, expertise, and commitment to
-        building safe, supportive spaces. Each member embodies our core values
-        of empathy, resilience, and hope—empowering participants to thrive and
-        belong.
+        We choose our team for their compassion, expertise, and commitment Each member embodies our core values
+        of empathy, resilience.
       </motion.p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {teamMembers.map((member, idx) => (
@@ -70,7 +68,7 @@ const Team = () => {
                   alt={member.name}
                   width={180}
                   height={180}
-                  className="object-cover rounded-t-lg w-full h-56"
+                  className="object-cover  w-full h-74"
                 />
               </div>
               <CardContent className="bg-white pt-4 pb-6 px-5">

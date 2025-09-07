@@ -1,5 +1,26 @@
 import { Brain } from "lucide-react";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Calendar24 } from "@/components/ui/calendar24";
 
 const Footer = () => {
   return (
@@ -8,7 +29,7 @@ const Footer = () => {
         {/* Appointment CTA */}
         <div className="flex flex-col items-center text-center mb-12">
           <div className="mb-4">
-            <Brain className="w-12 h-12 text-cyan-500"/>
+            <Brain className="w-12 h-12 text-cyan-500" />
           </div>
           <h2 className="text-2xl md:text-4xl font-semibold mb-2">
             Book An Appointment Today
@@ -17,12 +38,91 @@ const Footer = () => {
             Book an appointment with our handpicked mental health and wellness
             experts whenever or wherever you want!
           </p>
-          <a
-            href="#"
-            className="bg-cyan-600 active:bg-cyan-500 md:hover:bg-indigo-700 transition-all duration-500 text-white font-medium px-8 py-3 rounded-full shadow  inline-block"
-          >
-            Book An Appointment
-          </a>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button className="bg-cyan-600 active:bg-cyan-500 md:hover:bg-indigo-700 transition-all duration-500 text-white font-medium !px-8 !py-3 rounded-full">
+                Book An Appointment
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="overflow-y-auto px-6 py-6 max-h-screen">
+              <SheetHeader>
+                <SheetTitle>Book Your Appointment</SheetTitle>
+                <SheetDescription>
+                  Fill out the form below to book a session with our mental
+                  health professionals. All information is confidential.
+                </SheetDescription>
+              </SheetHeader>
+              <form className="grid gap-6 mt-6">
+                <div className="grid gap-3">
+                  <Label htmlFor="name">Full Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="email">Email Address</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@email.com"
+                    required
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="e.g. 602-774-4735"
+                    required
+                  />
+                </div>
+                <Calendar24 />
+                <div className="grid gap-3">
+                  <Label htmlFor="type">Session Type</Label>
+                  <Select name="type" required>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="virtual">Virtual (Online)</SelectItem>
+                      <SelectItem value="in-person">In-Person</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="concern">Main Concern</Label>
+                  <Input
+                    id="concern"
+                    name="concern"
+                    placeholder="e.g. Anxiety, Depression, ADHD"
+                    required
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="notes">Additional Notes</Label>
+                  <Input
+                    id="notes"
+                    name="notes"
+                    placeholder="Anything else we should know?"
+                  />
+                </div>
+                <SheetFooter className="mt-6 flex gap-4">
+                  <Button type="submit" className="bg-cyan-600 text-white">
+                    Book Appointment
+                  </Button>
+                  <SheetClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                  </SheetClose>
+                </SheetFooter>
+              </form>
+            </SheetContent>
+          </Sheet>
         </div>
 
         {/* Footer columns */}

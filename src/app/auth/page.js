@@ -19,6 +19,7 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const passwordPolicy = {
   minLength: 8,
@@ -146,7 +147,6 @@ export default function Auth() {
           <div className="flex items-center gap-3">
             <Brain
               className="w-8 h-8 text-cyan-500 cursor-pointer"
-              onClick={handleGoHome}
               tabIndex={0}
               role="button"
               title="Go to Home"
@@ -213,6 +213,9 @@ export default function Auth() {
       </div>
       {/* Right form card */}
       <div className="flex flex-col items-center justify-center w-full md:w-1/2  md:p-8">
+        <Link href={"/"} className={"flex justify-end w-full"}>
+          <Button>Go back Home</Button>
+        </Link>
         <AnimatePresence mode="wait">
           {mode === "login" ? (
             <motion.div
@@ -226,7 +229,6 @@ export default function Auth() {
               <div className="flex flex-col items-center mb-6">
                 <Brain
                   className="w-8 h-8 text-cyan-500 mb-2 cursor-pointer"
-                  onClick={handleGoHome}
                   tabIndex={0}
                   role="button"
                   title="Go to Home"
@@ -331,7 +333,6 @@ export default function Auth() {
               <div className="flex flex-col items-center mb-6">
                 <Brain
                   className="w-8 h-8 text-cyan-500 mb-2 cursor-pointer"
-                  onClick={handleGoHome}
                   tabIndex={0}
                   role="button"
                   title="Go to Home"

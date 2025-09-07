@@ -29,24 +29,24 @@ const OurWork = () => {
                 after you sign up.
               </p>
             </div>
-            <div className="flex gap-4 flex-wrap justify-center md:justify-start">
+            <div className="flex gap-4 flex-wrap  md:justify-start">
               <Button
                 className={
-                  "bg-cyan-400 text-white hover:text-black hover:bg-gray-200 transition-all duration-200 cursor-pointer"
+                  "bg-cyan-400 text-white hover:text-black hover:bg-gray-200 transition-all duration-200 w-full cursor-pointer"
                 }
                 onClick={() => router.push("/auth")}
               >
                 Login
               </Button>
               <Button
-                className={"!px-6 !py-1 cursor-pointer"}
+                className={"!px-6 !py-1 w-full cursor-pointer"}
                 onClick={() => router.push("/auth?mode=signup")}
               >
                 Start for free
               </Button>
             </div>
           </div>
-          <div className="h-32 w-32 md:h-40 md:w-40 flex-shrink-0 flex items-center justify-center">
+          <div className="h-32 w-32 md:h-40 md:w-40 flex-shrink-0 hidden md:flex items-center justify-center">
             {/* Replace with your survey image */}
             <Image
               className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center"
@@ -69,8 +69,7 @@ const OurWork = () => {
               your survey and session results.
             </p>
           </div>
-          <div className="h-32 w-32 md:h-40 md:w-40 flex-shrink-0 flex items-center justify-center">
-            {/* Replace with your solution image */}
+          <div className="h-32 w-32 md:h-40 md:w-40 flex-shrink-0 hidden md:flex items-center justify-center">
             <Image
               className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center"
               src={soln}
