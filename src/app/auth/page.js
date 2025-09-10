@@ -77,7 +77,13 @@ export default function Auth() {
     }
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      localStorage.setItem("user", JSON.stringify(user)); // Store user in localStorage
       toast.success("Logged in successfully!");
       window.location.replace("/client/dashboard");
     } catch (err) {
@@ -104,7 +110,13 @@ export default function Auth() {
     }
     setLoading(true);
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      localStorage.setItem("user", JSON.stringify(user)); // Store user in localStorage
       toast.success("Account created!");
       window.location.replace("/client/dashboard");
     } catch (err) {
@@ -118,7 +130,9 @@ export default function Auth() {
     setLoading(true);
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      const userCredential = await signInWithPopup(auth, provider);
+      const user = userCredential.user;
+      localStorage.setItem("user", JSON.stringify(user)); // Store user in localStorage
       toast.success("Google auth successful!");
       window.location.replace("/client/dashboard");
     } catch (err) {

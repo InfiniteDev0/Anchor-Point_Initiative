@@ -27,12 +27,12 @@ const Navbar = () => {
       {/* large screen size */}
       <div className="hidden sm:hidden lg:grid grid-cols-3 !py-4 !px-[3%] bg-white/90 backdrop-blur-lg  border-b  text-black w-full z-50 fixed">
         {/* logo */}
-        <div className="flex items-center gap-3">
+        <Link href={"/"} className="flex items-center gap-3">
           <Brain className="w-8 h-8 text-cyan-500" />
           <p className="leading-5 font-semibold text-black">
             ANCHOR POINT <br /> INITIATIVE
           </p>
-        </div>
+        </Link>
         {/* navlinks */}
         <div className="flex items-center justify-center">
           <ul className="flex items-center gap-[2rem]">
@@ -46,6 +46,10 @@ const Navbar = () => {
                 <button
                   className="flex items-center gap-2 text-sm !px-3 !py-2 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 focus:outline-none"
                   type="button"
+                  onClick={() => {
+                    setHoveredIndex(null);
+                    router.push(`/${dropdown.label.toLowerCase()}`);
+                  }}
                 >
                   <span>{dropdown.label}</span>
                   <motion.span
@@ -72,6 +76,14 @@ const Navbar = () => {
                         <div
                           key={item}
                           className="!px-4 !py-3 text-black dark:text-gray-200 text-sm hover:bg-white dark:hover:bg-zinc-800 rounded-xl transition cursor-pointer"
+                          onClick={() => {
+                            setHoveredIndex(null);
+                            router.push(
+                              `/${dropdown.label.toLowerCase()}#${item
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")}`
+                            );
+                          }}
                         >
                           {item}
                         </div>
@@ -83,35 +95,15 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        {/* auth */}
+        {/* Donation and store */}
         <div className="flex items-center justify-end gap-6">
-          <Store className="cursor-pointer" />
-          {token ? (
-            <Link href={"/profile"}>
-              <Image
-                src={profile}
-                className="w-12 h-12 cursor-pointer rounded-full"
-                alt=""
-              />
-            </Link>
-          ) : (
-            <div className="flex items-center gap-4">
-              <Button
-                className={
-                  "bg-transparent hover:bg-gray-200 transition-all duration-200 cursor-pointer text-black"
-                }
-                onClick={() => router.push("/auth")}
-              >
-                Login
-              </Button>
-              <Button
-                className={"!px-6 !py-1 cursor-pointer"}
-                onClick={() => router.push("/auth?mode=signup")}
-              >
-                Start for free
-              </Button>
-            </div>
-          )}
+          <Button onClick={() => router.push("/shop")}>
+            <Store className="cursor-pointer" />
+            <p>Visit our store</p>
+          </Button>
+          <Button onClick={() => router.push("/donate")}>
+            <p>Donate</p>
+          </Button>
         </div>
       </div>
 
@@ -119,12 +111,12 @@ const Navbar = () => {
       <div className="lg:hidden w-full fixed top-0 left-0 z-50">
         {/* Top bar */}
         <div className="flex items-center justify-between bg-white/90 backdrop-blur-lg border-b px-4 py-3">
-          <div className="flex items-center gap-3">
+          <Link href={"/"} className="flex items-center gap-3">
             <Brain className="w-8 h-8 text-cyan-500" />
             <p className="leading-5 text-sm font-semibold text-black">
               ANCHOR POINT <br /> INITIATIVE
             </p>
-          </div>
+          </Link>
           {/* Notification icon */}
           <div>
             <button
@@ -196,7 +188,13 @@ const Navbar = () => {
                   {dropdowns.map((dropdown) => (
                     <li key={dropdown.label}>
                       <details className="group">
-                        <summary className="flex items-center justify-between cursor-pointer py-2 px-2 rounded-lg hover:bg-gray-100 text-gray-700 font-medium">
+                        <summary
+                          className="flex items-center justify-between cursor-pointer py-2 px-2 rounded-lg hover:bg-gray-100 text-gray-700 font-medium"
+                          onClick={() => {
+                            setMenuOpen(false);
+                            router.push(`/${dropdown.label.toLowerCase()}`);
+                          }}
+                        >
                           <span>{dropdown.label}</span>
                           <ChevronDown className="w-4 h-4" />
                         </summary>
@@ -207,7 +205,11 @@ const Navbar = () => {
                                 className="w-full text-left !py-2 !px-2 rounded-lg hover:bg-indigo-50 text-gray-600"
                                 onClick={() => {
                                   setMenuOpen(false);
-                                  // Add navigation logic here if needed
+                                  router.push(
+                                    `/${dropdown.label.toLowerCase()}#${item
+                                      .toLowerCase()
+                                      .replace(/\s+/g, "-")}`
+                                  );
                                 }}
                               >
                                 {item}
@@ -219,41 +221,25 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 border-t pt-6">
-                  {token ? (
-                    <Link
-                      href="/profile"
-                      className="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-gray-100"
-                    >
-                      <img
-                        src={profile}
-                        alt="Profile"
-                        className="w-10 h-10 rounded-full"
-                      />
-                      <span className="font-medium text-gray-700">Profile</span>
-                    </Link>
-                  ) : (
-                    <div className="flex gap-3">
-                      <Button
-                        className="bg-black text-white hover:bg-indigo-700 w-[150px]"
-                        onClick={() => {
-                          setMenuOpen(false);
-                          router.push("/auth");
-                        }}
-                      >
-                        Login
-                      </Button>
-                      <Button
-                        className="bg-gray-200 text-gray-700 hover:bg-gray-200 w-[150px]"
-                        onClick={() => {
-                          setMenuOpen(false);
-                          router.push("/auth?mode=signup");
-                        }}
-                      >
-                        Start for free
-                      </Button>
-                    </div>
-                  )}
+                {/* Donation and store */}
+                <div className="flex items-center justify-end gap-6">
+                  <Button
+                    onClick={() => {
+                      setMenuOpen(false);
+                      router.push("/shop");
+                    }}
+                  >
+                    <Store className="cursor-pointer" />
+                    <p>Visit our store</p>
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      setMenuOpen(false);
+                      router.push("/donate");
+                    }}
+                  >
+                    <p>Donate</p>
+                  </Button>
                 </div>
               </nav>
             </motion.aside>

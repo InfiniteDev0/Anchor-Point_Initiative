@@ -1,12 +1,15 @@
 import {
   BookOpen,
   Handshake,
+  HeartPlus,
+  LandPlot,
+  Lightbulb,
   Paintbrush,
   Shield,
   Sparkles,
   Users,
 } from "lucide-react";
-import { client1, client2, client3, client4 } from "./images";
+import { client1, client2, client3, client4, five, four, hero1, hero2, one, three, two } from "./images";
 
 export const dropdowns = [
   {
@@ -30,8 +33,8 @@ export const dropdowns = [
     ],
   },
   {
-    label: "Contribute",
-    items: ["Donate", "Visit Our Store"],
+    label: "Resources",
+    items: ["Blog", "Annual report"],
   },
 ];
 
@@ -166,3 +169,37 @@ export const solutionsData = {
     { label: "Digital Programs", value: 15 },
   ],
 };
+
+
+export const AboutImages = [one, two, three, four, five];
+
+export const Ourvalues = [
+  {
+    title: "Mental Awareness",
+    description:
+      "We help you achieve mental awareness, and impude it in your life , to make it happier and joyful",
+    icon: Lightbulb,
+    color: "text-cyan-500", // cyan
+  },
+  {
+    title: "Trust",
+    description:
+      "Art, music, and writing sessions to encourage self-expression and emotional healing.",
+    icon: Handshake,
+    color: "text-orange-500", // orange
+  },
+  {
+    title: "Support",
+    description:
+      "Safe spaces for participants to support each other, break stigma, and foster belonging.",
+    icon: HeartPlus,
+    color: "text-green-500", // green
+  },
+  {
+    title: "Reliability",
+    description:
+      "Workshops and exercises focused on practical tools for emotional well-being.",
+    icon: LandPlot,
+    color: "text-indigo-500", // indigo
+  },
+];

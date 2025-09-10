@@ -3,6 +3,14 @@ import profile from "../../public/profile.jpg";
 import hero1 from "../../public/hero1.png";
 import hero2 from "../../public/hero2.jpg";
 import hero4 from "../../public/hero4.jpg";
+
+import one from "../../public/one.png";
+import two from "../../public/two.png";
+import three from "../../public/three.png";
+import four from "../../public/four.png";
+import five from "../../public/five.png";
+
+
 import brain from "../../public/brain.jpg";
 import team from "../../public/team.jpg";
 import client1 from "../../public/client1.jpg";
@@ -39,5 +47,10 @@ export {
     mente,
     timelycare,
     soln, 
-    survey
+    survey,
+    one,
+    two,
+    three,
+    four,
+    five
 }

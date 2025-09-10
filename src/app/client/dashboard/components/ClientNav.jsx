@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
 import {
+  Bell,
+  BellRing,
+  BoltIcon,
   Brain,
+  CircleDashed,
+  CircleDotDashed,
   CornerDownLeft,
+  Flame,
+  FlameIcon,
   SparkleIcon,
   Sparkles,
   StarIcon,
@@ -13,6 +20,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { auth } from "@/app/auth/firebase";
 import Link from "next/link";
+import { Input } from "@/components/ui/input";
 
 const ClientNav = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -37,19 +45,62 @@ const ClientNav = () => {
     }
   };
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex w-full px-5 py-2 border-b border-b-gray-400 justify-between items-center">
       <div className="flex items-center gap-3">
-        <Brain className="w-8 h-8 text-cyan-500" />
-        <h1 className="text-sm">
-          Anchor Point <br /> Initiative
-        </h1>
+        <Brain className="w-7 h-7 text-cyan-500" />
+        <div className="rounded-full border border-gray-400 !px-3 !py-1">
+          <h1 className="text-sm text-gray-500">WELCOME ABDIAZIZ</h1>
+        </div>
+        <Button
+          className={
+            "flex text-center items-center bg-orange-700 hover:bg-orange-400 transition-all duration-500 cursor-pointer w-8 h-8 justify-center rounded-full"
+          }
+        >
+          <FlameIcon className="w-4 h-4" />
+        </Button>
+        <Button
+          className={
+            "flex text-center items-center bg-green-700 hover:bg-green-400 transition-all duration-500 cursor-pointer w-8 h-8 justify-center rounded-full"
+          }
+        >
+          <CircleDotDashed className="w-4 h-4" />
+        </Button>
+        <Button
+          className={
+            "flex text-center items-center bg-purple-700 hover:bg-purple-400 transition-all duration-500 cursor-pointer w-8 h-8 justify-center rounded-full"
+          }
+        >
+          <BoltIcon className="w-4 h-4" />
+        </Button>
       </div>
-      <input
-        type="text"
-        placeholder="Search"
-        className="bg-zinc-200 outline-none rounded-md !p-2 w-[700px] placeholder:text-sm !px-5"
-      />
+      <div className="flex-1 flex justify-end px-5">
+        <div className="relative w-full max-w-md">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search..."
+            className="w-full text- border border-gray-300 text-gray-700 rounded-lg py-2 pl-4 pr-20 placeholder:text-gray-400 placeholder:text-sm outline-none  focus:ring-0 transition"
+            style={{ fontSize: "1rem" }}
+          />
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1">
+            <span className="text-gray-400 px-2 py-1 rounded-md text-xs border border-gray-300">
+              Ctrl
+            </span>
+            <span className="text-gray-400 px-2 py-1 rounded-md text-xs border border-gray-300">
+              K
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div className="flex items-center gap-3">
+        <Button
+          className={
+            "flex text-center items-center w-10 h-10 justify-center rounded-full"
+          }
+        >
+          <BellRing className="w-5 h-5" />
+        </Button>
         <Button
           className={
             "cursor-pointer  bg-white text-black hover:text-white hover:bg-black rounded-sm transition-all duration-500"

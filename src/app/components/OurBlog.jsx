@@ -39,7 +39,7 @@ const OurBlog = () => {
     <div className="max-w-7xl mx-auto !py-16 !px-5">
       <div className="flex justify-between items-center !mb-6">
         <Button variant="outline" size="sm" asChild>
-          <Link href="/blog">View all blogs</Link>
+          <Link href="/resources#Blog">View all blogs</Link>
         </Button>
         <Button size="sm" onClick={handleRefresh}>
           Refresh

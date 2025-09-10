@@ -38,7 +38,7 @@ const Footer = () => {
             Book an appointment with our handpicked mental health and wellness
             experts whenever or wherever you want!
           </p>
-          <Sheet>
+          <Sheet className=''>
             <SheetTrigger asChild>
               <Button className="bg-cyan-600 active:bg-cyan-500 md:hover:bg-indigo-700 transition-all duration-500 text-white font-medium !px-8 !py-3 rounded-full">
                 Book An Appointment

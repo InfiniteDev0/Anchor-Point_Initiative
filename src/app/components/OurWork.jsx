@@ -7,9 +7,22 @@ import { ChartAreaInteractive } from "./charts/ChartAreaInteractive";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { soln, survey } from "@/assets/images";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { Label } from "recharts";
+import { Input } from "@/components/ui/input";
+import { Calendar24 } from "@/components/ui/calendar24";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const OurWork = () => {
-  const router = useRouter();
   const { scrollY } = useViewportScroll();
   const start = 300; // when animation starts
   const end = 700; // when animation ends
@@ -29,22 +42,93 @@ const OurWork = () => {
                 after you sign up.
               </p>
             </div>
-            <div className="flex gap-4 flex-wrap  md:justify-start">
-              <Button
-                className={
-                  "bg-cyan-400 text-white hover:text-black hover:bg-gray-200 transition-all duration-200 w-full cursor-pointer"
-                }
-                onClick={() => router.push("/auth")}
-              >
-                Login
-              </Button>
-              <Button
-                className={"!px-6 !py-1 w-full cursor-pointer"}
-                onClick={() => router.push("/auth?mode=signup")}
-              >
-                Start for free
-              </Button>
-            </div>
+            <Sheet className="">
+              <SheetTrigger asChild>
+                <Button className="bg-cyan-600 active:bg-cyan-500 md:hover:bg-indigo-700 transition-all duration-500 text-white font-medium !px-8 !py-3 rounded-full">
+                  Book An Appointment
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="overflow-y-auto px-6 py-6 max-h-screen">
+                <SheetHeader>
+                  <SheetTitle>Book Your Appointment</SheetTitle>
+                  <SheetDescription>
+                    Fill out the form below to book a session with our mental
+                    health professionals. All information is confidential.
+                  </SheetDescription>
+                </SheetHeader>
+                <form className="grid gap-6 mt-6">
+                  <div className="grid gap-3">
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Your full name"
+                      required
+                    />
+                  </div>
+                  <div className="grid gap-3">
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="you@email.com"
+                      required
+                    />
+                  </div>
+                  <div className="grid gap-3">
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="e.g. 602-774-4735"
+                      required
+                    />
+                  </div>
+                  <Calendar24 />
+                  <div className="grid gap-3">
+                    <Label htmlFor="type">Session Type</Label>
+                    <Select name="type" required>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="virtual">
+                          Virtual (Online)
+                        </SelectItem>
+                        <SelectItem value="in-person">In-Person</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="grid gap-3">
+                    <Label htmlFor="concern">Main Concern</Label>
+                    <Input
+                      id="concern"
+                      name="concern"
+                      placeholder="e.g. Anxiety, Depression, ADHD"
+                      required
+                    />
+                  </div>
+                  <div className="grid gap-3">
+                    <Label htmlFor="notes">Additional Notes</Label>
+                    <Input
+                      id="notes"
+                      name="notes"
+                      placeholder="Anything else we should know?"
+                    />
+                  </div>
+                  <SheetFooter className="mt-6 flex gap-4">
+                    <Button type="submit" className="bg-cyan-600 text-white">
+                      Book Appointment
+                    </Button>
+                    <SheetClose asChild>
+                      <Button variant="outline">Cancel</Button>
+                    </SheetClose>
+                  </SheetFooter>
+                </form>
+              </SheetContent>
+            </Sheet>
           </div>
           <div className="h-32 w-32 md:h-40 md:w-40 flex-shrink-0 hidden md:flex items-center justify-center">
             {/* Replace with your survey image */}
@@ -91,7 +175,7 @@ const OurWork = () => {
               programs.
             </p>
           </div>
-          <div className="w-full min-h-[200px]">
+          <div className="w-full">
             <ChartAreaInteractive />
           </div>
         </div>
