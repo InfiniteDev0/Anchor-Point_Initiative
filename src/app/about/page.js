@@ -60,7 +60,7 @@ const itemVariants = {
         {/*  give the images here */}
         <div className="flex items-center gap-5">
           {AboutImages.map((item, index) => {
-            return <Image src={item} alt={`about image${item}`} />;
+            return <Image key={index} src={item} alt={`about image${item}`} />;
           })}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 p-5 gap-5">
@@ -111,7 +111,7 @@ const itemVariants = {
           {
             Ourvalues.map((item , index) =>{
               const Icon = item.icon;
-              return <div className="!p-3 border-2 border-gray-300 rounded-md flex flex-col gap-3">
+              return <div key={index} className="!p-3 border-2 border-gray-300 rounded-md flex flex-col gap-3">
                 <Icon className={`w-5 h-5 ${item.color}`}/>
                 <h1 className="text-base">{item.title}</h1>
                 <p className="text-xs text-gray-500">{item.description}</p>
