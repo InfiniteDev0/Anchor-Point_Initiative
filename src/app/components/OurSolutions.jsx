@@ -24,9 +24,10 @@ const itemVariants = {
 const OurSolutions = () => {
   return (
     <motion.div
-      className="max-w-6xl md:max-w-8xl mx-auto flex flex-col items-center py-12  md:px-4"
+      className="max-w-6xl md:max-w-8xl mx-auto flex flex-col items-center py-12"
       style={{
-        backgroundImage: "url('/team.jpg')",
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -44,7 +45,7 @@ const OurSolutions = () => {
         Our Solutions & Programs
       </motion.h2>
       <motion.p
-        className="text-gray-700 text-xs md:text-sm mb-10 w-[70%] text-center"
+        className="text-gray-700 text-xs  mb-10 w-[70%] text-center"
         variants={itemVariants}
         viewport={{ once: true, amount: 0.3 }}
       >
@@ -59,16 +60,16 @@ const OurSolutions = () => {
             variants={itemVariants}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Card className="md:bg-white/40 backdrop-blur-xl hover:bg-white transition-all duration-500 border-none cursor-pointer">
+            <Card className="md:bg-white/10 backdrop-blur-xl hover:bg-white transition-all duration-500 border-none cursor-pointer">
               <CardHeader className="flex flex-col  text-left gap-2">
                 <solution.icon
-                  size={55}
-                  className="border !p-4 rounded-full"
+                  size={35}
+                  className="!p-2 bg-black rounded-full"
                   color={solution.color}
                 />
                 <span className="font-semibold">{solution.title}</span>
               </CardHeader>
-              <CardContent className="text-gray-600 text-sm">
+              <CardContent className="text-gray-600 text-xs">
                 {solution.description}
               </CardContent>
             </Card>
