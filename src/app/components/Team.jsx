@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Instagram, Twitter, Globe } from "lucide-react";
+import { Instagram, Twitter, Globe, Mail } from "lucide-react";
 import Image from "next/image";
 import { teamMembers } from "@/assets/assets";
 
@@ -61,35 +61,35 @@ const Team = () => {
             variants={itemVariants}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Card className={`overflow-hidden shadow-none p-0`}>
+            <Card className={`rounded-none border-none bg-transparent hoverflow-hidden shadow-none p-0`}>
               <div className="w-full  flex items-center justify-center">
                 <Image
                   src={member.image}
                   alt={member.name}
                   width={180}
                   height={180}
-                  className="object-cover  w-full h-74"
+                  className="object-cover  w-full h-60"
                 />
               </div>
-              <CardContent className="bg-white pt-4 pb-6 px-5">
+              <CardContent className="pt-4 pb-6 px-5">
                 <div className="font-semibold  text-gray-900 mb-1">
                   {member.name}
                 </div>
-                <div className="text-sm text-gray-500 mb-2">{member.role}</div>
+                <div className="text-xs text-gray-500 mb-2">{member.role}</div>
                 <div className="text-[10px] text-gray-400 mb-4">
                   {member.description}
                 </div>
                 <div className="flex  gap-4">
-                  <Globe
-                    size={17}
+                  <Mail
+                    size={13}
                     className="text-gray-800 hover:text-black transition"
                   />
                   <Instagram
-                    size={17}
+                    size={13}
                     className="text-gray-800 hover:text-pink-500 transition"
                   />
                   <Twitter
-                    size={17}
+                    size={13}
                     className="text-gray-800 hover:text-sky-500 transition"
                   />
                 </div>

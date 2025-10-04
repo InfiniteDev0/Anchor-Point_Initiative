@@ -183,8 +183,8 @@ const OurWork = () => {
     },
   ];
   return (
-    <div className="relative w-full overflow-clip !px-[1.5rem] md:!px-[5%] !py-[5rem]">
-      <h1 className="text-5xl md:text-9xl font-extrabold tracking-tighter text-gray-300 text-center mb-12">
+    <div className="relative w-full overflow-clip md:!px-[5%] !py-[5rem]">
+      <h1 className="text-4xl md:text-9xl font-extrabold tracking-tighter text-gray-300 text-center mb-12">
         HOW WE{" "}
         <motion.span
           style={{ y, display: "inline-block" }}

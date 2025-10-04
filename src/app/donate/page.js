@@ -82,7 +82,7 @@ export default function Donationpage() {
           </Link>
           <div className="w-[90%] flex flex-col !p-5 gap-3">
             <motion.h1
-              className="text-4xl md:text-black font-extrabold one"
+              className="text-3xl md:text-black font-extrabold one"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -91,7 +91,7 @@ export default function Donationpage() {
               Be a Donor
             </motion.h1>
             <motion.p
-              className="text-gray-900 md:text-gray-900 text-sm"
+              className="text-gray-900 md:text-gray-900 text-xs"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -105,28 +105,28 @@ export default function Donationpage() {
       </div>
       {/* Right donation form */}
       <div className="flex flex-col  gap-[2rem] w-full md:w-1/2 p-12 md:p-8">
-        <h1 className="text-xl font-semibold">Donate! </h1>
-        <p>
+        <h1 className="text-lg font-semibold">Donate! </h1>
+        <p className="text-xs text-gray-500">
           {" "}
           Make an impact with your donation! Just $15 covers the cost of a
           therapy session, providing essential support to those in need.
         </p>
-        <p>
+        <p className="text-xs text-gray-500">
           With $50, you can empower a Rafiki to become a peer support champion,
           fostering resilience and compassion within our communities and helping
           to bridge the mental health care gap. One Rafiki can impact up to 100
           people.
         </p>
-        <p>
+        <p className="text-xs text-gray-500">
           A generous donation of $10,000 can establish a community wellness
           centre, bringing vital mental health resources to underserved
           communities.
         </p>
-        <p>
+        <p className="text-xs text-gray-500">
           Your contribution, no matter the amount, directly supports our efforts
           to strengthen Mental Health support systems and transform lives.
         </p>
-        <p>
+        <p className="text-xs text-gray-500">
           Together, let’s create a world where mental well-being is a universal
           right.
         </p>
@@ -134,9 +134,9 @@ export default function Donationpage() {
           href="https://paystack.shop/pay/ztz02jl3m1"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-600 hover:bg-green-700 text-white text-center rounded-lg py-3 px-6 font-semibold transition-all duration-300"
+          className="bg-black hover:bg-green-700 text-sm text-white w-fit text-center rounded-sm py-1 px-6  transition-all duration-300"
         >
-          Donate
+          Donate Now
         </a>
       </div>
     </div>

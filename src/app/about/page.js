@@ -3,7 +3,6 @@ import { Award } from "lucide-react";
 import React from "react";
 import Team from "../components/Team";
 import Image from "next/image";
-import { hero2, hero4 } from "@/assets/images";
 import { AboutImages, Ourvalues, solutions } from "@/assets/assets";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";

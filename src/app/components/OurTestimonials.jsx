@@ -55,7 +55,7 @@ const itemVariants = {
 const OurTestimonials = () => {
   return (
     <motion.div
-      className="max-w-7xl mx-auto py-16 px-4"
+      className="max-w-7xl mx-auto py-16 px-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -97,17 +97,17 @@ const OurTestimonials = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="bg-white rounded-xl min-h-[30vh] p-6">
-              <p className="text-gray-800 text-sm mb-4">{t.text}</p>
+              <p className="text-gray-700 text-xs mb-4">{t.text}</p>
               <div className="flex items-center gap-3 mt-6">
                 <Avatar className="w-10 h-10">
                   <AvatarImage src={t.image.src} alt={t.name} />
                   <AvatarFallback>{t.name[0]}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <div className="font-semibold text-sm text-gray-900">
+                  <div className="text-xs text-gray-900">
                     @{t.name}
                   </div>
-                  <div className="text-xs text-gray-500">{t.role}</div>
+                  <div className="text-[10px] text-gray-500">{t.role}</div>
                 </div>
               </div>
             </div>

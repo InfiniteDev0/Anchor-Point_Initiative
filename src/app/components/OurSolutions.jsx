@@ -24,7 +24,7 @@ const itemVariants = {
 const OurSolutions = () => {
   return (
     <motion.div
-      className="max-w-full md:max-w-8xl mx-auto flex flex-col items-center py-12  md:px-4"
+      className="max-w-6xl md:max-w-8xl mx-auto flex flex-col items-center py-12  md:px-4"
       style={{
         backgroundImage: "url('/team.jpg')",
         backgroundSize: "cover",

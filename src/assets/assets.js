@@ -9,7 +9,7 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
-import { client1, client2, client3, client4, five, four, hero1, hero2, one, three, two } from "./images";
+import { five, four, hero1, hero2, one, three, two } from "./images";
 
 export const dropdowns = [
   {
@@ -40,38 +40,38 @@ export const dropdowns = [
 
 export const teamMembers = [
   {
-    name: "Dr. Amina Yusuf",
-    role: "Program Director",
+    name: "Ramla Bashir",
+    role: "Executive Director",
     description:
       "Leads API’s community-based mental health programs, ensuring safe, supportive spaces for youth and families.",
-    image: client1,
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/c1.jpg",
     bg: "bg-blue-100",
     color: "#3b82f6",
   },
   {
-    name: "Samuel Okoro",
-    role: "Lead Facilitator",
+    name: "Fuad Abdirahman",
+    role: "Community Outreach Coordinator",
     description:
       "Guides group discussions and creative activities, helping participants build resilience and break stigma.",
-    image: client2,
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/c2.jpg",
     bg: "bg-red-100",
     color: "#ef4444",
   },
   {
-    name: "Fatima Bello",
-    role: "Peer Support Coordinator",
+    name: "Siham Tahlil",
+    role: "social affairs lead",
     description:
       "Organizes peer support sessions, fostering belonging and hope through shared experiences.",
-    image: client3,
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/c3.jpg",
     bg: "bg-yellow-100",
     color: "#fbbf24",
   },
   {
-    name: "David Mensah",
-    role: "Creative Programs Lead",
+    name: "Abdiwahab billow",
+    role: "Secretary General",
     description:
       "Designs and runs art, music, and writing workshops for emotional well-being and self-expression.",
-    image: client4,
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/c4.jpg",
     bg: "bg-purple-100",
     color: "#a78bfa",
   },
@@ -201,5 +201,80 @@ export const Ourvalues = [
       "Workshops and exercises focused on practical tools for emotional well-being.",
     icon: LandPlot,
     color: "text-indigo-500", // indigo
+  },
+];
+
+export const Activities = [
+  {
+    name: "Art Therapy Workshops",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/art.png",
+  },
+  {
+    name: "Football & Basketball Games",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/bF.jpeg",
+  },
+  {
+    name: "Drama & Storytelling Nights",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/TOP.png",
+  },
+  {
+    name: "Creative Writing or Journaling Groups",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/Cw.png",
+  },
+  {
+    name: "Puzzle Nights",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/PN.png",
+  },
+  {
+    name: "Movie Nights",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/MN.png",
+  },
+  {
+    name: "Adventures and Travel Trips",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/At.jpg",
+  },
+];
+ 
+export const Resilience = [
+  {
+    name: "Mindfulness & Meditation Sessions",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/A.png",
+  },
+  {
+    name: "Leadership & Problem-Solving Workshops",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/A1.png",
+  },
+  {
+    name: "Stress Management & Coping Techniques",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/A2.png",
+  },
+  {
+    name: "Support Groups and Peer Mentoring",
+    image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/A3.png",
+  },
+];
+
+
+
+export const Awareness = [
+  {
+    name: "Mental Health Education Workshops (Schools, Community Centers)",
+    image: "https://example.com/images/mental-health-education.jpg",
+  },
+  {
+    name: "Guest Speakers and Youth-Led Discussions",
+    image: "https://example.com/images/guest-speakers.jpg",
+  },
+  {
+    name: "Campaigns on Social Media & Local Events",
+    image: "https://example.com/images/social-campaigns.jpg",
+  },
+  {
+    name: "Community Mental Health Fairs",
+    image: "https://example.com/images/community-fair.jpg",
+  },
+  {
+    name: "Training on Recognizing Warning Signs and Supporting Peers",
+    image: "https://example.com/images/warning-signs-training.jpg",
   },
 ];

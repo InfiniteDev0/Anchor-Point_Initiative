@@ -28,8 +28,8 @@ const Navbar = () => {
       <div className="hidden sm:hidden lg:grid grid-cols-3 !py-4 !px-[3%] bg-white/90 backdrop-blur-lg  border-b  text-black w-full z-50 fixed">
         {/* logo */}
         <Link href={"/"} className="flex items-center gap-3">
-          <Brain className="w-8 h-8 text-cyan-500" />
-          <p className="leading-5 font-semibold text-black">
+          <Brain className="w-7 h-7 text-cyan-500" />
+          <p className="leading-5 text-xs font-semibold text-black">
             ANCHOR POINT <br /> INITIATIVE
           </p>
         </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <button
-                  className="flex items-center gap-2 text-sm !px-3 !py-2 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 focus:outline-none"
+                  className="flex items-center gap-2 text-xs !px-3 !py-2 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 focus:outline-none"
                   type="button"
                   onClick={() => {
                     setHoveredIndex(null);
@@ -75,7 +75,7 @@ const Navbar = () => {
                       {dropdown.items.map((item) => (
                         <div
                           key={item}
-                          className="!px-4 !py-3 text-black dark:text-gray-200 text-sm hover:bg-white dark:hover:bg-zinc-800 rounded-xl transition cursor-pointer"
+                          className="!px-4 !py-3 text-black dark:text-gray-200 text-xs hover:bg-white dark:hover:bg-zinc-800 rounded-xl transition cursor-pointer"
                           onClick={() => {
                             setHoveredIndex(null);
                             router.push(
@@ -98,11 +98,11 @@ const Navbar = () => {
         {/* Donation and store */}
         <div className="flex items-center justify-end gap-6">
           <Button onClick={() => router.push("/shop")}>
-            <Store className="cursor-pointer" />
-            <p>Visit our store</p>
+            <Store className="cursor-pointer w-4 h-4" />
+            <p className="text-xs">Visit our store</p>
           </Button>
           <Button onClick={() => router.push("/donate")}>
-            <p>Donate</p>
+            <p className="text-xs">Donate</p>
           </Button>
         </div>
       </div>
@@ -222,7 +222,7 @@ const Navbar = () => {
                   ))}
                 </ul>
                 {/* Donation and store */}
-                <div className="flex items-center justify-end gap-6">
+                <div className="flex items-center !mt-10 gap-6">
                   <Button
                     onClick={() => {
                       setMenuOpen(false);

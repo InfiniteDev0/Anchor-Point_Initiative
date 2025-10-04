@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [new URL("https://assets.example.com/account123/**")],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "emeafihornkyefo7.public.blob.vercel-storage.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

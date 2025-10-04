@@ -8,6 +8,9 @@ body{
   user-select: none;
 }
 
+.outfit{
+  font-family: 'outfit';
+}
 
 
 @theme inline {

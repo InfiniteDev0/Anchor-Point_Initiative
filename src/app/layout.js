@@ -47,11 +47,11 @@ export default function RootLayout({ children }) {
         <Toaster richColors position="top-right" />
         <AppProvider>
           {!(
-            pathname === "/donate" || pathname.startsWith("/client/dashboard")
+            pathname === "/donate" || pathname.startsWith("/client/dashboard") || pathname.startsWith("/auth")
           ) && <Navbar />}
           {children}
           {!(
-            pathname === "/donate" || pathname.startsWith("/client/dashboard")
+            pathname === "/donate" || pathname.startsWith("/client/dashboard") || pathname.startsWith("/auth")
           ) && <Footer />}
           {/* Floating Chat AI Button */}
           {!(

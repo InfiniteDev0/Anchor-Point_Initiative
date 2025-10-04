@@ -36,17 +36,17 @@ const OurBlog = () => {
   const handleRefresh = () => getMentalHealthNews();
 
   return (
-    <div className="max-w-7xl mx-auto !py-16 !px-5">
+    <div className="max-w-7xl mx-auto !py-16 !px-10">
       <div className="flex justify-between items-center !mb-6">
-        <Button variant="outline" size="sm" asChild>
+        <Button className={'text-xs'} variant="outline" size="sm" asChild>
           <Link href="/resources#Blog">View all blogs</Link>
         </Button>
-        <Button size="sm" onClick={handleRefresh}>
+        <Button className={'text-xs'} size="sm" onClick={handleRefresh}>
           Refresh
         </Button>
       </div>
-      <h2 className="text-3xl font-bold !mb-2">Blog and Article</h2>
-      <p className="text-gray-500 !mb-10 text-sm max-w-2xl">
+      <h2 className="text-2xl font-bold !mb-2">Blog and Article</h2>
+      <p className="text-gray-500 !mb-10 text-xs max-w-2xl">
         Latest mental health news and articles from trusted sources.
       </p>
       <div className="relative">
@@ -103,18 +103,18 @@ const OurBlog = () => {
                     read
                   </div>
                   <Link href={article.link} target="_blank">
-                    <div className="font-semibold  text-gray-900 mb-2 hover:underline cursor-pointer">
+                    <div className="font-semibold text-sm text-gray-900 mb-2 hover:underline cursor-pointer">
                       {article.title}
                     </div>
                   </Link>
-                  <div className="text-xs text-gray-500 mb-4 line-clamp-2">
+                  <div className="text-[10px] text-gray-500 mb-4 line-clamp-2">
                     {article.description}
                   </div>
                   <div className="flex justify-between items-center">
                     <Link
                       href={article.link}
                       target="_blank"
-                      className="text-white bg-black !px-5 !py-1 rounded-full text-sm font-medium flex items-center gap-1 hover:underline"
+                      className="text-white text-xs bg-black !px-5 !py-1 rounded-full  flex items-center gap-1 hover:underline"
                     >
                       Read post <span aria-hidden>↗</span>
                     </Link>
@@ -131,7 +131,7 @@ const OurBlog = () => {
               <PaginationPrevious
                 onClick={handlePrev}
                 disabled={page === 1}
-                className={"hover:bg-black hover:text-white !mr-7"}
+                className={"hover:bg-black text-xs hover:text-white !mr-7"}
               />
             </PaginationItem>
             <PaginationItem>
@@ -143,7 +143,7 @@ const OurBlog = () => {
               <PaginationNext
                 onClick={handleNext}
                 disabled={page === totalPages}
-                className={"bg-black text-white !ml-10"}
+                className={"bg-black text-xs text-white !ml-10"}
               />
             </PaginationItem>
           </PaginationContent>
