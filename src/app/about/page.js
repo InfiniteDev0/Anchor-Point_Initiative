@@ -38,9 +38,9 @@ const itemVariants = {
 };
 
   return (
-    <main className="max-w-8xl mx-auteo px-4 md:px-8 lg:px-16 py-10 md:py-[6rem] space-y-16 flex flex-col gap-[3rem]">
+    <main className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-[6rem] space-y-16 flex flex-col gap-[2rem]">
       <div className="flex flex-col gap-4 mb-10 text-center">
-        <p className="rounded-full px-4 py-1 flex items-center gap-2 border-2 border-cyan-400 w-fit text-xs">
+        <p className="rounded-full px-4 py-1 flex items-center gap-2 border md:border-2 border-cyan-400 w-fit text-[10px] md:text-xs">
           <Award className="w-4 h-4" />
           About Anchor Point Initiative
         </p>
@@ -57,9 +57,9 @@ const itemVariants = {
       </div>
       <section id="our-story" className="flex flex-col gap-[3rem] md:gap-[5rem] items-center">
         {/*  give the images here */}
-        <div className="flex items-center gap-5">
+        <div className="grid grid-cols-2 justify-center md:flex items-center gap-5">
           {AboutImages.map((item, index) => {
-            return <Image key={index} src={item} alt={`about image${item}`} />;
+            return <Image width={180} height={200} key={index} src={item} alt={`about image${item}`} className="w-full" />;
           })}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 p-5 gap-5">
@@ -124,13 +124,13 @@ const itemVariants = {
       </section>
       <section id="our-approach" className="space-y-8">
         <h2 className="text-3xl font-bold mb-6 text-center">Our Approach</h2>
-        <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+        <p className="text-sm md:text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
           At Anchor Point Initiative, our approach is holistic, innovative, and
           deeply personal. We blend evidence-based practices, creative
           therapies, and community engagement to support every aspect of mental
           wellness. Explore our core pillars below:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 !px-[1.5rem] md:!px-[3rem] gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 !px-[.5rem] md:!px-[3rem] gap-6">
           {solutions.map((solution, idx) => (
             <motion.div
               key={solution.title}

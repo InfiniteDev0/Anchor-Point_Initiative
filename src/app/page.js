@@ -21,17 +21,18 @@ export default function Home() {
   }, [router]);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#f5f4f2]">
-        <div>
-          {/* home componenets run here and the chat system */}
-          <Hero />
-          <Featured/>
-          <OurWork/>
-          <OurSolutions />
-          <Team/>
-          <OurBlog/>
-          <OurTestimonials/>
-          
+      <div className="flex flex-col items-center">
+        {/* home componenets run here and the chat system */}
+        <Hero />
+        <Featured />
+        <OurWork />
+        <OurSolutions />
+        <div className="py-10">
+          <Team />
         </div>
+        <OurBlog />
+        <OurTestimonials />
+      </div>
     </div>
   );
 }

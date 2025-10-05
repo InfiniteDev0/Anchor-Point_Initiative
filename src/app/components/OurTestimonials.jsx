@@ -96,9 +96,9 @@ const OurTestimonials = () => {
             variants={itemVariants}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="bg-white rounded-xl min-h-[30vh] p-6">
+            <div className="bg-white rounded-xl min-h-fit p-6">
               <p className="text-gray-700 text-xs mb-4">{t.text}</p>
-              <div className="flex items-center gap-3 mt-6">
+              <div className="flex itemas-center gap-3 mt-6">
                 <Avatar className="w-10 h-10">
                   <AvatarImage src={t.image.src} alt={t.name} />
                   <AvatarFallback>{t.name[0]}</AvatarFallback>

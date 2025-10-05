@@ -26,7 +26,7 @@ const itemVariants = {
 const Team = () => {
   return (
     <motion.div
-      className="max-w-6xl mx-auto py-20 px-6 md:py-16 md:px-4"
+      className="max-w-6xl mx-auto py-0 px-6 md:!py-20 md:px-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -68,7 +68,7 @@ const Team = () => {
                   alt={member.name}
                   width={180}
                   height={180}
-                  className="object-cover  w-full h-60"
+                  className="object-cover  w-full md:h-60"
                 />
               </div>
               <CardContent className="pt-4 pb-6 px-5">

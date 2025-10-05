@@ -171,7 +171,13 @@ export const solutionsData = {
 };
 
 
-export const AboutImages = [one, two, three, four, five];
+export const AboutImages = [
+  "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0361.jpg",
+  "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0354%20%281%29.jpg",
+  "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0281.jpg",
+  "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0322.jpg",
+  "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0383.jpg",
+];
 
 export const Ourvalues = [
   {

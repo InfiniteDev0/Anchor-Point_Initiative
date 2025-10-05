@@ -47,11 +47,11 @@ const Resourcepage = () => {
   const handleNext = () => setPage((p) => Math.min(totalPages, p + 1));
   const handleRefresh = () => getMentalHealthNews();
   return (
-    <div className="md:!py-[4rem]">
+    <div className="py-[3rem] md:!py-[4rem]">
       <div id="#Blog">
         <div className="max-w-7xl mx-auto !py-16 !px-5">
-          <h2 className="text-3xl font-bold !mb-2">Blog and Article</h2>
-          <p className="text-gray-500 !mb-10 text-sm max-w-2xl">
+          <h2 className="text-xl md:text-3xl font-bold !mb-2">Blog and Article</h2>
+          <p className="text-gray-500 !mb-10 text-xs md:text-sm max-w-2xl">
             Latest mental health news and articles from trusted sources.
           </p>
           <div className="relative">
@@ -156,13 +156,13 @@ const Resourcepage = () => {
           </div>
         </div>
       </div>
-      <div id="#annual-report" className="max-w-7xl mx-auto !py-16 !px-5">
-        <h2 className="text-3xl font-bold mb-4">
+      <div id="#annual-report" className="max-w-7xl mx-auto md:!py-16 md:!px-12">
+        <h2 className="text-xl !px-5 font-bold mb-4">
           Annual Report: May 2024 – July 2025
         </h2>
         {/* Chart: Events per Month */}
         <div className=" p-6">
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 className="text-sm font-semibold mb-4">
             Visitors Timeline
           </h3>
          <ChartAreaInteractive/>
