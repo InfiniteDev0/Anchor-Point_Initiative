@@ -18,11 +18,7 @@ export const dropdowns = [
   },
   {
     label: "Solutions",
-    items: [
-      "Guided Discussions",
-      "Peer Support",
-      "Hope & Empowerment",
-    ],
+    items: ["Guided Discussions", "Peer Support", "Hope & Empowerment"],
   },
   {
     label: "Programs",
@@ -170,7 +166,6 @@ export const solutionsData = {
   ],
 };
 
-
 export const AboutImages = [
   "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0361.jpg",
   "https://emeafihornkyefo7.public.blob.vercel-storage.com/IMG_0354%20%281%29.jpg",
@@ -240,7 +235,7 @@ export const Activities = [
     image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/At.jpg",
   },
 ];
- 
+
 export const Resilience = [
   {
     name: "Mindfulness & Meditation Sessions",
@@ -259,8 +254,6 @@ export const Resilience = [
     image: "https://emeafihornkyefo7.public.blob.vercel-storage.com/A3.png",
   },
 ];
-
-
 
 export const Awareness = [
   {
@@ -282,5 +275,191 @@ export const Awareness = [
   {
     name: "Training on Recognizing Warning Signs and Supporting Peers",
     image: "https://example.com/images/warning-signs-training.jpg",
+  },
+];
+
+export const productsArray = [
+  // T-shirts
+  {
+    id: "tshirt-1",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710941439002_lifestyle?$plpDeskRF$",
+        color: "bg-white",
+      },
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710941439001_lifestyle?$plpDeskRF$",
+        color: "bg-black",
+      },
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710941439003_lifestyle?$plpDeskRF$",
+        color: "bg-cyan-500",
+      },
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710941439004_lifestyle?$plpDeskRF$",
+        color: "bg-red-500",
+      },
+    ],
+    name: "Custom API Classic T-shirt",
+    price: "1000",
+    type: "T-shirts",
+    gender: "Men",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    description: "Comfortable cotton t-shirt with API logo",
+  },
+  {
+    id: "tshirt-2",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI785A93286004_lifestyle?$plpDeskRF$",
+        color: "bg-white",
+      },
+    ],
+    name: "Custom API Premium T-shirt",
+    price: "1000",
+    type: "T-shirts",
+    gender: "Men",
+    sizes: ["S", "M", "L", "XL"],
+    description: "Premium quality t-shirt with embroidered logo",
+  },
+  {
+    id: "tshirt-3",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1337015_lifestyle?$plpDeskRF$",
+        color: "bg-white",
+      },
+    ],
+    name: "Custom API Vintage T-shirt",
+    price: "1000",
+    type: "T-shirts",
+    gender: "Unisex",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Vintage style t-shirt with retro API design",
+  },
+  {
+    id: "tshirt-4",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI785A93287001_lifestyle?$plpDeskRF$",
+        color: "bg-white",
+      },
+    ],
+    name: "Custom API Sport T-shirt",
+    price: "1000",
+    type: "T-shirts",
+    gender: "Women",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Athletic fit t-shirt for active lifestyle",
+  },
+
+  // Sweaters
+  {
+    id: "sweater-1",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710A33368007_lifestyle?$plpDeskRF$",
+        color: "gray",
+      },
+    ],
+    name: "API Crew Neck Sweater",
+    price: "2500",
+    type: "Sweaters",
+    gender: "Men",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Cozy crew neck sweater with API branding",
+  },
+  {
+    id: "sweater-2",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710980336001_lifestyle?$plpDeskRF$",
+        color: "navy",
+      },
+    ],
+    name: "API V-Neck Sweater",
+    price: "2500",
+    type: "Sweaters",
+    gender: "Women",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Elegant v-neck sweater for professional look",
+  },
+  {
+    id: "sweater-3",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI710961151005_lifestyle?$plpDeskRF$",
+        color: "black",
+      },
+    ],
+    name: "API Cardigan Sweater",
+    price: "2800",
+    type: "Sweaters",
+    gender: "Unisex",
+    sizes: ["S", "M", "L", "XL"],
+    description: "Button-up cardigan with API logo detail",
+  },
+  {
+    id: "sweater-4",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1488518_lifestyle?$plpDeskRF$",
+        color: "white",
+      },
+    ],
+    name: "API Turtleneck Sweater",
+    price: "2700",
+    type: "Sweaters",
+    gender: "Women",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Sophisticated turtleneck sweater",
+  },
+
+  // Hoodies
+  {
+    id: "hoodie-1",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI785A84597001_lifestyle?$plpDeskRF$",
+        color: "black",
+      },
+    ],
+    name: "API Classic Hoodie",
+    price: "3000",
+    type: "Hoodies",
+    gender: "Men",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Classic pullover hoodie with kangaroo pocket",
+  },
+  {
+    id: "hoodie-2",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-351594_lifestyle?$plpDeskRF$",
+        color: "gray",
+      },
+    ],
+    name: "API Zip-Up Hoodie",
+    price: "3200",
+    type: "Hoodies",
+    gender: "Unisex",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    description: "Full-zip hoodie with API embroidered logo",
+  },
+  // Caps
+  {
+    id: "cap-1",
+    link: [
+      {
+        url: "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-AI449P00058001_lifestyle?$plpDeskRF$",
+        color: "black",
+      },
+    ],
+    name: "API Baseball Cap",
+    price: "800",
+    type: "Caps",
+    gender: "Unisex",
+    sizes: ["One Size"],
+    description: "Adjustable baseball cap with embroidered API logo",
   },
 ];
