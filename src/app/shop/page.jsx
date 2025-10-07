@@ -2,25 +2,13 @@
 import { productsArray } from "@/assets/assets";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ShoppingBag } from "lucide-react";
 
 const filterButtons = ["T-shirts", "Sweaters", "Hoodies", "Caps"];
 
 const Shoppage = () => {
   const [shopProducts, setShop] = useState(productsArray);
   const [activeFilter, setActiveFilter] = useState("All");
-  const [cartCount, setCartCount] = useState(0);
   const router = useRouter();
-
-  useEffect(() => {
-    const updateCartCount = () => {
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      setCartCount(cart.length);
-    };
-    updateCartCount();
-    window.addEventListener("storage", updateCartCount);
-    return () => window.removeEventListener("storage", updateCartCount);
-  }, []);
 
   const handleFilter = (type) => {
     setActiveFilter(type);
@@ -39,12 +27,15 @@ const Shoppage = () => {
   };
 
   return (
-    <div className="!px-[3%] !py-[7rem] min-h-screen flex flex-col gap-4">
-      <h1>Our shop</h1>
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
+    <div className="px-4 md:px-6 lg:px-12 py-24 md:py-28 min-h-screen flex flex-col gap-4">
+      <h1 className="text-xl">Our shop</h1>
+
+      {/* Filter Section */}
+      <div className="w-full">
+        {/* Filter Buttons - Horizontal Scroll */}
+        <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
           <div
-            className={`bg-transparent border border-gray-400 rounded-full outfit text-xs w-fit !px-3 flex items-center gap-3 !py-1 cursor-pointer hover:bg-gray-100 ${
+            className={`bg-transparent border border-gray-400 rounded-full outfit text-xs whitespace-nowrap px-4 py-2 cursor-pointer hover:bg-gray-100 transition-colors flex-shrink-0 ${
               activeFilter === "All" ? "bg-gray-200" : ""
             }`}
             onClick={() => handleFilter("All")}
@@ -54,7 +45,7 @@ const Shoppage = () => {
           {filterButtons.map((item, index) => (
             <div
               key={index}
-              className={`bg-transparent border border-gray-400 rounded-full outfit text-xs w-fit !px-3 flex items-center gap-3 !py-1 cursor-pointer hover:bg-gray-100 ${
+              className={`bg-transparent border border-gray-400 rounded-full outfit text-xs whitespace-nowrap px-4 py-2 cursor-pointer hover:bg-gray-100 transition-colors flex-shrink-0 ${
                 activeFilter === item ? "bg-gray-200" : ""
               }`}
               onClick={() => handleFilter(item)}
@@ -63,39 +54,32 @@ const Shoppage = () => {
             </div>
           ))}
         </div>
-
-        <div
-          className="flex relative cursor-pointer"
-          onClick={() => router.push("/cart")}
-        >
-          <ShoppingBag className="w-5 h-5 relative" />
-          <span className="w-4 h-4 absolute bottom-3 left-3 bg-black text-white rounded-full items-center flex justify-center !p-2 text-xs">
-            {cartCount}
-          </span>
-        </div>
       </div>
 
-      <div className="flex flex-col !p-2 w-full gap-3">
-        <p className="flex items-center justify-end text-sm">
+      {/* Products Section */}
+      <div className="flex flex-col gap-4 mt-4">
+        <p className="flex items-center justify-end text-sm text-gray-600">
           {shopProducts.length} items
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
           {shopProducts.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-200 p-3 rounded-lg cursor-pointer"
+              className="border border-gray-200 p-2 md:p-3 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
               onClick={() => router.push(`/shop/${item.id}`)}
             >
-              <div className="flex flex-col gap-3">
-                <div className="w-full h-48 bg-gray-100 rounded-lg overflow-hidden">
+              <div className="flex flex-col gap-2 md:gap-3">
+                <div className="w-full h-32 sm:h-40 md:h-48 bg-gray-100 rounded-lg overflow-hidden">
                   <img
                     src={getProductImage(item)}
                     alt={item.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="text-xs font-medium">{item.name}</p>
-                <p className="text-xs font-semibold underline outfit">
+                <p className="text-xs md:text-sm font-medium line-clamp-2">
+                  {item.name}
+                </p>
+                <p className="text-xs md:text-sm font-semibold underline outfit">
                   {Number(item.price).toLocaleString()} KSH
                 </p>
                 <button
@@ -103,7 +87,7 @@ const Shoppage = () => {
                     e.stopPropagation();
                     router.push(`/shop/${item.id}`);
                   }}
-                  className="bg-black text-white text-xs h-8 cursor-pointer rounded hover:bg-gray-800 transition-colors"
+                  className="bg-black text-white text-xs h-7 md:h-8 cursor-pointer rounded hover:bg-gray-800 transition-colors"
                 >
                   Add to cart
                 </button>

@@ -2,7 +2,7 @@
 import { Brain, ChevronDown, Store } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { dropdowns } from "@/assets/assets";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,8 +19,27 @@ const dropdownVariants = {
 const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const { token, setToken } = useContext(AppContext);
   const router = useRouter();
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      setCartCount(cart.length);
+    };
+
+    updateCartCount();
+
+    // Listen for storage changes and custom cart events
+    window.addEventListener("storage", updateCartCount);
+    window.addEventListener("cartUpdated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("storage", updateCartCount);
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
 
   return (
     <div>
@@ -97,9 +116,14 @@ const Navbar = () => {
         </div>
         {/* Donation and store */}
         <div className="flex items-center justify-end gap-6">
-          <Button onClick={() => router.push("/shop")}>
+          <Button className="relative" onClick={() => router.push("/shop")}>
             <Store className="cursor-pointer w-4 h-4" />
             <p className="text-xs">Visit our store</p>
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-medium">
+                {cartCount}
+              </span>
+            )}
           </Button>
           <Button onClick={() => router.push("/donate")}>
             <p className="text-xs">Donate</p>
@@ -118,12 +142,20 @@ const Navbar = () => {
             </p>
           </Link>
           {/* Notification icon */}
-          <div>
+          <div className="flex items-center">
             <button
-              className="p-2 rounded-full hover:bg-gray-100"
-              aria-label="Notifications"
+              onClick={() => {
+                setMenuOpen(false);
+                router.push("/shop");
+              }}
+              className="p-2 rounded-full hover:bg-gray-100 relative"
             >
               <Store className="cursor-pointer w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-black text-white rounded-full w-4 h-4 flex items-center justify-center text-xs font-medium">
+                  {cartCount}
+                </span>
+              )}
             </button>
             {/* Menu icon */}
             <button
@@ -223,15 +255,6 @@ const Navbar = () => {
                 </ul>
                 {/* Donation and store */}
                 <div className="flex items-center !mt-10 gap-6">
-                  <Button
-                    onClick={() => {
-                      setMenuOpen(false);
-                      router.push("/shop");
-                    }}
-                  >
-                    <Store className="cursor-pointer" />
-                    <p>Visit our store</p>
-                  </Button>
                   <Button
                     onClick={() => {
                       setMenuOpen(false);

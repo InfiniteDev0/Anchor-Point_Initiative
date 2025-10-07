@@ -1,6 +1,6 @@
 "use client";
 import { productsArray } from "@/assets/assets";
-import { ChevronLeft, Clock, ShoppingBag } from "lucide-react";
+import { ChevronLeft, Clock } from "lucide-react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -17,15 +17,6 @@ const Productpage = () => {
   );
   const [quantity, setQuantity] = useState(1);
   const [shopProducts, setShop] = useState(productsArray);
-  const [cartCount, setCartCount] = useState(0);
-
-  useEffect(() => {
-    const updateCartCount = () => {
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      setCartCount(cart.length);
-    };
-    updateCartCount();
-  }, []);
 
   if (!product) return <div>Product not found</div>;
 
@@ -43,7 +34,6 @@ const Productpage = () => {
       quantity,
     });
     localStorage.setItem("cart", JSON.stringify(cart));
-    setCartCount(cart.length);
     toast.success("Added to cart successfully!");
   };
 
@@ -60,52 +50,57 @@ const Productpage = () => {
   );
 
   return (
-    <div className="!px-[3%] outfit !py-[7rem] min-h-screen flex flex-col gap-4">
+    <div className="px-3 md:px-6 lg:px-12 py-20 md:py-28 min-h-screen flex flex-col gap-6">
+      {/* Back Button */}
       <Link
         href={"/shop"}
-        className="flex items-center gap-2 border border-gray-500 w-fit !px-5 !py-1 text-xs rounded-full "
+        className="flex items-center gap-2 border border-gray-500 w-fit px-4 py-2 text-xs rounded-full hover:bg-gray-50 transition-colors"
       >
         <ChevronLeft className="w-4 h-4" />
         Go back to shop
       </Link>
-      <div className="flex items-center gap-[5rem]">
-        <div className="">
-          <p className="font-semi-bold outfit underline">{product.name}</p>
-          <img
-            src={
-              product.link.find((l) => l.color === selectedColor)?.url ||
-              product.link[0]?.url
-            }
-            alt={product.name}
-            className="w-full h-full"
-          />
-        </div>
-        <div className="flex flex-col justify-center w-full gap-4 h-[70vh]">
-          <div
-            className="flex relative justify-end cursor-pointer"
-            onClick={() => router.push("/cart")}
-          >
-            <ShoppingBag className="w-5 h-5 relative" />
-            <span className="w-4 h-4 absolute bottom-3 left-full bg-black text-white rounded-full items-center flex justify-center !p-2 text-xs">
-              {cartCount}
-            </span>
+
+      {/* Product Details Section */}
+      <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
+        {/* Product Image */}
+        <div className="w-full lg:w-1/2">
+          <p className="font-semibold outfit underline text-sm mb-4">
+            {product.name}
+          </p>
+          <div className="w-full aspect-square bg-gray-100 rounded-lg overflow-hidden">
+            <img
+              src={
+                product.link.find((l) => l.color === selectedColor)?.url ||
+                product.link[0]?.url
+              }
+              alt={product.name}
+              className="w-full h-full object-cover"
+            />
           </div>
+        </div>
+
+        {/* Product Info */}
+        <div className="w-full lg:w-1/2 flex flex-col gap-6">
           <div>
-            <p className="text-xs">
+            <p className="text-sm text-gray-600">
               {product.gender}/{product.type}
             </p>
-            <p className="text-xl outfit">{product.name}</p>
-            <p className="text-xs outfit text-purple-600">
-              {product.price} KSH
+            <h1 className="text-2xl md:text-3xl outfit font-medium mt-2">
+              {product.name}
+            </h1>
+            <p className="text-lg outfit text-purple-600 font-semibold mt-2">
+              {Number(product.price).toLocaleString()} KSH
             </p>
           </div>
+
+          {/* Size Selection */}
           <div className="flex flex-col gap-3">
             <p className="font-semibold outfit text-sm">Size:</p>
-            <div className="flex !pl-4 items-center gap-4">
+            <div className="flex flex-wrap gap-3">
               {product.sizes.map((size) => (
                 <button
                   key={size}
-                  className={`border w-30 h-7 text-xs border-gray-500 px-2 ${
+                  className={`border border-gray-500 px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
                     selectedSize === size ? "bg-black text-white" : ""
                   }`}
                   onClick={() => setSelectedSize(size)}
@@ -115,11 +110,55 @@ const Productpage = () => {
               ))}
             </div>
           </div>
-          <p className="flex items-center gap-2 text-xs outfit">
+
+          {/* Color Selection */}
+          {product.link.length > 1 && (
+            <div className="flex flex-col gap-3">
+              <p className="font-semibold outfit text-sm">Color:</p>
+              <div className="flex gap-3">
+                {product.link.map((l, idx) => (
+                  <button
+                    key={idx}
+                    className={`w-8 h-8 rounded border-2 ${l.color} ${
+                      selectedColor === l.color
+                        ? "border-black"
+                        : "border-gray-300"
+                    }`}
+                    onClick={() => setSelectedColor(l.color)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Quantity Selection */}
+          <div className="flex flex-col gap-3">
+            <p className="font-semibold outfit text-sm">Quantity:</p>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                className="border border-gray-300 w-8 h-8 flex items-center justify-center hover:bg-gray-100"
+              >
+                -
+              </button>
+              <span className="w-12 text-center">{quantity}</span>
+              <button
+                onClick={() => setQuantity(quantity + 1)}
+                className="border border-gray-300 w-8 h-8 flex items-center justify-center hover:bg-gray-100"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          {/* Delivery Info */}
+          <p className="flex items-center gap-2 text-sm outfit text-gray-600">
             <Clock className="w-4 h-4" /> Same Day Delivery
           </p>
+
+          {/* Add to Cart Button */}
           <button
-            className="bg-black text-white h-9 text-sm"
+            className="bg-black text-white py-3 px-6 text-sm font-medium hover:bg-gray-800 transition-colors w-full md:w-auto"
             onClick={handleAddToCart}
           >
             Add to Bag
@@ -128,44 +167,48 @@ const Productpage = () => {
       </div>
 
       {/* Related items */}
-      <div className="flex flex-col gap-4 !mt-5">
-        <p className="text-lg underline">Related items</p>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {relatedProducts.map((item, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 p-3 rounded-lg cursor-pointer"
-            onClick={() => {
-              router.push(`/shop/${item.id}`);
-              window.scrollTo(0, 0); // Scroll to top when clicking related product
-            }}
-          >
-            <div className="flex flex-col gap-3">
-              <div className="w-full h-48 bg-gray-100 rounded-lg overflow-hidden">
-                <img
-                  src={getProductImage(item)}
-                  alt={item.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-xs font-medium">{item.name}</p>
-              <p className="text-xs font-semibold underline outfit">
-                {item.price} KSH
-              </p>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
+      {relatedProducts.length > 0 && (
+        <div className="flex flex-col gap-6 mt-12">
+          <h2 className="text-xl font-semibold underline">Related items</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {relatedProducts.map((item, index) => (
+              <div
+                key={index}
+                className="border border-gray-200 p-3 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+                onClick={() => {
                   router.push(`/shop/${item.id}`);
+                  window.scrollTo(0, 0);
                 }}
-                className="bg-black text-white text-xs h-8 cursor-pointer rounded hover:bg-gray-800 transition-colors"
               >
-                Add to cart
-              </button>
-            </div>
+                <div className="flex flex-col gap-3">
+                  <div className="w-full h-32 sm:h-40 md:h-48 bg-gray-100 rounded-lg overflow-hidden">
+                    <img
+                      src={getProductImage(item)}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-xs font-medium line-clamp-2">
+                    {item.name}
+                  </p>
+                  <p className="text-xs font-semibold underline outfit">
+                    {Number(item.price).toLocaleString()} KSH
+                  </p>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      router.push(`/shop/${item.id}`);
+                    }}
+                    className="bg-black text-white text-xs h-8 cursor-pointer rounded hover:bg-gray-800 transition-colors"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
