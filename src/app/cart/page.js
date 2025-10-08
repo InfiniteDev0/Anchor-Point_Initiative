@@ -34,7 +34,7 @@ const CartPage = () => {
   const total = getSubtotal() - discount + deliveryFee;
 
   return (
-    <div className="!px-[3%] !py-[7rem] min-h-screen flex flex-col gap-4">
+    <div className="!px-[3%] outfit !py-[7rem] min-h-screen flex flex-col">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
         <span
@@ -47,8 +47,7 @@ const CartPage = () => {
         <span className="text-black">Cart</span>
       </div>
 
-      <h1 className="text-3xl font-light mb-8">YOUR CART</h1>
-
+      <h1 className="text-lg underline font-light mb-8">YOUR CART</h1>
       {cart.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-20 text-center">
           <p className="text-gray-500 text-lg mb-6">Your cart is empty.</p>
@@ -63,11 +62,12 @@ const CartPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2">
+            <p className="text-sm text-gray-500 flex justify-end">{cart.length}items</p>
             <div className="space-y-6">
               {cart.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg"
+                  className="flex items-center gap-4 p-4 border-b border-gray-500"
                 >
                   {/* Product Image - Clickable */}
                   <div
@@ -86,7 +86,7 @@ const CartPage = () => {
                     className="flex-1 cursor-pointer"
                     onClick={() => router.push(`/shop/${item.id}`)}
                   >
-                    <h3 className="font-medium text-lg hover:text-blue-600 transition-colors">
+                    <h3 className="font-medium underline transition-colors">
                       {item.name}
                     </h3>
                     <div className="text-sm text-gray-600 space-y-1">

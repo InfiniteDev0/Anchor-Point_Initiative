@@ -2,13 +2,34 @@
 import { productsArray } from "@/assets/assets";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 const filterButtons = ["T-shirts", "Sweaters", "Hoodies", "Caps"];
 
 const Shoppage = () => {
   const [shopProducts, setShop] = useState(productsArray);
+  const [cartCount, setCartCount] = useState(0)
   const [activeFilter, setActiveFilter] = useState("All");
   const router = useRouter();
+
+  useEffect(() => {
+      const updateCartCount = () => {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        setCartCount(cart.length);
+      };
+  
+      updateCartCount();
+  
+      // Listen for storage changes and custom cart events
+      window.addEventListener("storage", updateCartCount);
+      window.addEventListener("cartUpdated", updateCartCount);
+  
+      return () => {
+        window.removeEventListener("storage", updateCartCount);
+        window.removeEventListener("cartUpdated", updateCartCount);
+      };
+    }, []);
 
   const handleFilter = (type) => {
     setActiveFilter(type);
@@ -53,6 +74,18 @@ const Shoppage = () => {
               {item}
             </div>
           ))}
+
+          {cartCount <= 0 ? (
+            ""
+          ) : (
+            <Link
+              href={"/cart"}
+              className="flex items-center gap-2 border border-black w-fit px-4 py-2 text-xs rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
+            >
+              Go to Cart
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          )}
         </div>
       </div>
 
@@ -65,7 +98,7 @@ const Shoppage = () => {
           {shopProducts.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-200 p-2 md:p-3 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+              className="border border-gray-200 p-2 md:p-3  cursor-pointer  "
               onClick={() => router.push(`/shop/${item.id}`)}
             >
               <div className="flex flex-col gap-2 md:gap-3">
